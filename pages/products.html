@@ -12,34 +12,147 @@
         <li><a href="/techbulger/">Kezdőoldal</a></li>
         <li><a href="/techbulger/pages/products.html">Termékek</a></li>
         <li><a href="/techbulger/pages/orders.html">Rendelés</a></li>
-        <li><a href="/techbulger/price.html">Áraink</a></li>
-        <li><a href="/techbulger/contact.html">Rólunk</a></li>
+        <li><a href="/techbulger/pages/price.html">Áraink</a></li>
+        <li><a href="/techbulger/pages/contact.html">Rólunk</a></li>
     </ul>
 
     <h2>Tech Burgerek</h2>
-    <ul><!--Rendezetlen Lista-->
-        <li>Gamer PC</li><!--Listaelem-->
-        <li>Otthoni PC</li>
-        <li>Irodai Gép</li>
-    </ul>
-    <h3>Plusz kongfiguráció</h3>
+    <table>
+        <caption>Előre elkészített konfigurációk</caption>
+        <thead>
+            <tr><!--Sor-->
+                <th>Név</th>
+                <th>Ártartomámy</th>
+                <th>Kinek ajánljuk?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#GamerPC">Gamer PC</a></td>
+                <td>1500 - 4500$</td>
+                <td>Igazi Gamerekeknek, akik csak játszani akarnak!</td>
+            </tr>
+            <tr>
+                <td><a href="#HomePC">Otthoni Számítógépek</a></td>
+                <td>600 - 2000$</td>
+                <td>Akik szívesen ötvözni szeretnék a Gamer és az Irodai PC-k előnyeiket!</td>
+            </tr>
+            <tr>
+                <td><a href="#OfficePC">Irodai Számítógépek</a></td>
+                <td>425 - 1000$</td>
+                <td>Irodai munkára legalkalmasabb gépek, ahol nem a teljesítmény az első!</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">&copy; 2022 - Az árak tartalamzzák az áfát is!</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h3>Ajánlataink</h3>
+    <table>
+        <thead>
+            <caption>Konkrét ajánlataink</caption>
+            <tr>
+                <th>Csoportnév</th>
+                <th>Konfiguráció neve</th>
+                <th>Konfiguráció</th>
+                <th>Ára</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="GamerPC">Gamer PC</td>
+                <td>Console Lover Player</td>
+                <td>
+                    <ul><!--Rendezetlen Lista-->
+                        <li>Intel® Core™ i7-10700F processzor 2.90 GHz</li><!--Listaelem-->
+                        <li>DDR4-es 32GB 3200 MHz</li>
+                        <li>NVIDIA GeForce RTX 3070 Super</li>
+                        <li>SSD , 1 TB , M.2 via PCIe</li>
+                    </ul>
+                </td>
+                <td>3450$</td>
+            </tr>
+            <tr>
+                <td>Gamer PC</td>
+                <td>Best Gaming Computer Device</td>
+                <td>
+                    <ul>
+                        <li>AMD® Ryzen™ 5 3600X processzor 3.8GHz</li>
+                        <li>DDR4 16GB 3200MHz</li>
+                        <li>NVIDIA GeForce GTX 1650</li>
+                        <li>SSD , 960 GB , M.2 via PCIe</li>
+                    </ul>
+                </td>
+                <td>3000$</td>
+            </tr>
+            <tr>
+                <td id="HomePC">Otthoni PC</td>
+                <td>Mini Raspberry Clone</td>
+                <td>
+                    <ul>
+                        <li>Intel® Celeron® G5920 processzor 3.5GHz</li>
+                        <li>DDR4 8GB 2400MHZ</li>
+                        <li>Intel UHD Graphics 610</li>
+                        <li>SSD , 512 GB</li>
+                    </ul>
+                </td>
+                <td>1960$</td>
+            </tr>
+            <tr>
+                <td>Otthoni PC</td>
+                <td>Only Browsing PC</td>
+                <td>
+                    <ul>
+                        <li>Intel® Core™ i3-10100F processzor 3.6GHu</li>
+                        <li>DDR4 4GB 1200MHZ</li>
+                        <li>Intel UHD Graphics 610</li>
+                        <li>SSD , 206 GB</li>
+                    </ul>
+                </td>
+                <td>698$</td>
+            </tr>
+            <tr>
+                <td id="OfficePC">Irodai PC</td>
+                <td>Mini Barbone PC</td>
+                <td>
+                    <ul>
+                        <li>Intel® Core™ i5-10500T processzor 2.3GHz</li>
+                        <li>DDR4 4GB 2300MHz</li>
+                        <li>Intel UHD Graphics 630</li>
+                        <li>SSD , 128 GB , M.2 via PCIe</li>
+                    </ul>
+                </td>
+                <td>680$</td>
+            </tr>
+            <tr>
+                <td>Irodai PC</td>
+                <td>Maxi Mini PC</td>
+                <td>
+                    <ul>
+                        <li>Intel® Core™ i5-8500B processzor 3GHz</li>
+                        <li>DD4 8 GB 2666MHz</li>
+                        <li>Intel UHD Graphics 630</li>
+                        <li>SSD , 512 GB , M.2 via PCIe</li>
+                    </ul>
+                </td>
+                <td>894$</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Bővítési opciók</h3>
     <ol><!--Rendezett Lista-->
-        <li>Jobb videókártya</li>
-        <li>+2 GB Memória</li>
-        <li>+4 GB Memória</li>
+        <li>Videókártya csere</li>
+        <li>Memória bővítés</li>
+        <li>Alaplap csere</li>
+        <li>Plusz Háttértár</li>
+        <li>Ezek közül mindegyiket kérem</li>
     </ol>
-    <h3>Rendelés lépései:</h3>
-    <ol>
-        <li>Válaszd ki a megfelelő Tech Burgert!</li>
-        <li>Ha kell, kérj hozzá plusz konfigurációt!</li>
-        <li>Add meg a címedet!</li>
-        <li>Vedd át a csomagodat!</li>
-        <li>Értékeld az oldalt és mondd el a véleményedet!</li>
-    </ol>
-    <a target="_blank" href="https://www.mediamarkt.hu/hu/product/_x-x-gamer-i3310-gamer-pc-core-i7-32gb-1024-gb-ssd-rtx3070s-8gb-noos-1349016.html">Gamer PC (Nem fizetett hirdetés)</a> <!--target blank => Új lapon fog megnyilni-->
-    <a href="https://www.mediamarkt.hu/hu/product/_x-x-gamer-i3310-gamer-pc-core-i7-32gb-1024-gb-ssd-rtx3070s-8gb-noos-1349016.html"><img width="100" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29" alt="Gamer PC"></a>
-    <img src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29" alt="Gamer PC"> <!--Kép beillesztése-->
-    <img src="/html-basic-1/img/aszt-slimpc.jpg" alt="Asztali gép">
-    <img src="/html-basic-1/img/HP-irodai-pc.jpg" alt="Irodai PC">
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Gaming_computer">Gamer PC-ről</a> <!--target blank => Új lapon fog megnyilni-->
+    <a href="https://en.wikipedia.org/wiki/Gaming_computer"><img width="100" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29" alt="Gamer PC"></a>
+    <img width="100" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29" alt="Gamer PC"> <!--Kép beillesztése-->
+    <img width="100" src="/html-basic-1/img/aszt-slimpc.jpg" alt="Asztali gép">
+    <img with="100" src="/html-basic-1/img/HP-irodai-pc.jpg" alt="Irodai PC">
 </body>
 </html>
