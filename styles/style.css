@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;1,500&display=swap');
+@font-face {
+    font-family: "Mulish";
+    src: url(/techbulger/styles/fonts/Mulish-VariableFont_wght.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Mulish-Light";
+    src: url(/techbulger/styles/fonts/Mulish-Italic-VariableFont_wght.ttf);
+    font-weight: 300;
+}
+html{
+    margin: 2%;
+    font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
+    line-height: 25px;/*Sortávolság*/
+}
+h1,h2,h3,td{
+    text-align: center;
+}
+p{
+    text-align: justify;
+    font-family: 'Mulish';
+}
+ul{
+    font-family: 'Mulish-Light';
+    text-transform: capitalize;/*Szókezdő betűket nagyá teszi*/
+}
+img{
+    width: 25%;
+}
+ul,ol{
+    text-align: left;
+}
