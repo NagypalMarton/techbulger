@@ -15,11 +15,16 @@
     font-weight: 700;
 }
 body{
-    margin: 4%;
     line-height: 28px;/*Sortávolság*/
+    background-color: whitesmoke;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 html{
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
+    background-color: lightgreen;
+    margin: 0% 5%;
+    border: solid 2px rgb(12, 19, 12);
 }
 h1,h2,h3{
     text-align: center;
@@ -27,10 +32,14 @@ h1,h2,h3{
 }
 h2,h3{
     color: green;
+    border-bottom: solid 3px grey;
 }
 p{
     text-align: justify;
     font-family: 'Mulish';
+    min-width: 25%;
+    max-width: 75%;
+    padding: 0 5%;
 }
 ul,ol,link{
     font-family: 'Mulish-Bold';
@@ -40,4 +49,18 @@ ul,ol,link{
 }
 img{
     width: 25%;
+}
+.menu{ /*class selektor*/
+    box-shadow: 0 0 10px whitesmoke;
+    margin: 2%;
+    border: dashed 1.6px darkslateblue;
+    padding: 2%;
+    background-color: darkkhaki;
+    text-align: center;
+    display: inline;
+    font-weight: 600;
+}
+#menu{ /*ID selektor*/
+    padding: 3.5% 0%;
+    background-color: slategray ;
 }
