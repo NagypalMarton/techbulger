@@ -9,25 +9,35 @@
     src: url(/techbulger/styles/fonts/Mulish-Italic-VariableFont_wght.ttf);
     font-weight: 300;
 }
-html{
-    margin: 2%;
-    font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
-    line-height: 25px;/*Sortávolság*/
+@font-face{
+    font-family: "Mulish-Bold";
+    src: url(/techbulger/styles/fonts/static/Mulish-Bold.ttf);
+    font-weight: 700;
 }
-h1,h2,h3,td{
+body{
+    margin: 4%;
+    line-height: 28px;/*Sortávolság*/
+}
+html{
+    font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
+}
+h1,h2,h3{
     text-align: center;
+    color: brown;
+}
+h2,h3{
+    color: green;
 }
 p{
     text-align: justify;
     font-family: 'Mulish';
 }
-ul{
-    font-family: 'Mulish-Light';
+ul,ol,link{
+    font-family: 'Mulish-Bold';
+    text-align: left;
     text-transform: capitalize;/*Szókezdő betűket nagyá teszi*/
+    color: lightslategray;
 }
 img{
     width: 25%;
-}
-ul,ol{
-    text-align: left;
 }
