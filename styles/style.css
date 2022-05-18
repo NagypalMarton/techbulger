@@ -23,7 +23,7 @@ body{
 html{
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
     background-color: lightgreen;
-    margin: 0% 5%;
+    margin: 0% 3%;
     border: solid 2px rgb(12, 19, 12);
 }
 h1,h2,h3{
@@ -39,7 +39,6 @@ p{
     font-family: 'Mulish';
     min-width: 25%;
     max-width: 75%;
-    padding: 0 5%;
 }
 ul,ol,link{
     font-family: 'Mulish-Bold';
@@ -58,7 +57,7 @@ img{
     background-color: darkkhaki;
     text-align: center;
     display: inline;
-    font-weight: 600;
+    font-weight: 400;
 }
 #menu{ /*ID selektor*/
     padding: 3.5% 0%;
