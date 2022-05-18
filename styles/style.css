@@ -22,7 +22,7 @@ body{
 }
 html{
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
-    background-color: lightgreen;
+    background-color: darkorange;
     margin: 0% 3%;
     border: solid 2px rgb(12, 19, 12);
 }
@@ -44,22 +44,49 @@ ul,ol,link{
     font-family: 'Mulish-Bold';
     text-align: left;
     text-transform: capitalize;/*Szókezdő betűket nagyá teszi*/
-    color: lightslategray;
+    color: rgb(48, 49, 49);
 }
 img{
     width: 25%;
 }
 .menu{ /*class selektor*/
-    box-shadow: 0 0 10px whitesmoke;
-    margin: 2%;
-    border: dashed 1.6px darkslateblue;
-    padding: 2%;
-    background-color: darkkhaki;
+    box-shadow: 0 0 15px;
+    margin:0% 2%;
+    border: dashed 3px darkcyan;
+    padding: 1.5%;
+    background-color: lightsalmon;
     text-align: center;
     display: inline;
-    font-weight: 400;
+    font-weight: bolder;
 }
 #menu{ /*ID selektor*/
     padding: 3.5% 0%;
-    background-color: slategray ;
+    background-color: brown ;
+}
+
+.contant{
+    margin: 0% 5%;
+}
+.sorparo{
+    background-color: rgb(205, 205, 205);
+}
+.fejlec{
+    background-color: yellowgreen;
+    color: aliceblue;
+    font-weight: bolder;
+    text-align: center;
+}
+.fejlec,.sorparo{
+    padding: 0%;
+}
+span{
+    color: gray;
+    margin-left: 10%;
+    display: block;
+    font-weight: bolder;
+}
+caption{
+    background-color: brown;
+    color: white;
+    font-weight: bolder;
 }
