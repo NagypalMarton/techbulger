@@ -79,9 +79,7 @@ a{
 .contant{
     margin: 0% 5%;
 }
-.sorparo{
-    background-color: rgb(205, 205, 205);
-}
+
 .fejlec{
     background-color: yellowgreen;
     color: aliceblue;
@@ -119,6 +117,9 @@ a[href*="#"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetle
 img[src^="http"]:hover{
     box-shadow: 0 0 30px ;
 }
+tr:nth-child(2n+0){/*táblázatoknál minden 2. sor legyen ilyen*/
+    background-color: rgb(205, 205, 205);
+}
 ol li:first-child{
     color: orange;
     font-weight: bolder;
@@ -132,5 +133,29 @@ ul{
 }
 td{
     text-align: center;
-    padding: 10px;
+}
+table, tr,td{
+    border-collapse: collapse;
+    border: none;
+}
+fieldset,button{
+    margin: 0% 3% 3%;
+}
+.submit-btn:hover{
+    box-shadow: 0 0 30px darkorange;
+    font-weight: bolder;
+    color: brown;
+}
+.form-class input, .form-class textarea{
+    display: block;
+    border: solid 2px darkkhaki;
+}
+.form-class input:hover, .form-class textarea:hover{
+    box-shadow:  0 0 15px ;
+    border: solid 2px darkslategrey;
+}
+.form-class input:focus, .form-class textarea:focus{
+    box-shadow: 0 0 15xp;
+    background-color: lemonchiffon;
+    font-weight: bolder;
 }
