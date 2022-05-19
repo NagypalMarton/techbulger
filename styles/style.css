@@ -15,16 +15,16 @@
     font-weight: 700;
 }
 body{
-    line-height: 28px;/*Sortávolság*/
+    margin: 0%;
+    line-height: 25px;/*Sortávolság*/
     background-color: whitesmoke;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: 2% 0%;
 }
 html{
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
     background-color: darkorange;
-    margin: 0% 3%;
-    border: solid 2px rgb(12, 19, 12);
+    margin: 0% 5%;
+    border: solid 8px yellow;
 }
 h1,h2,h3{
     text-align: center;
@@ -40,17 +40,23 @@ p{
     min-width: 25%;
     max-width: 75%;
 }
-ul,ol,link{
+ul,link{
     font-family: 'Mulish-Bold';
     text-align: left;
     text-transform: capitalize;/*Szókezdő betűket nagyá teszi*/
     color: rgb(48, 49, 49);
 }
 img{
-    width: 25%;
+    display: block;
+    margin: 0% auto;
+    max-width: 45%;
+    min-width: 20%;
+}
+a{
+    color: black;
+    text-decoration: none;
 }
 .menu{ /*class selektor*/
-    box-shadow: 0 0 15px;
     margin:0% 2%;
     border: dashed 3px darkcyan;
     padding: 1.5%;
@@ -89,4 +95,36 @@ caption{
     background-color: brown;
     color: white;
     font-weight: bolder;
+}
+a[href$=".html"]:focus{ /*Összes .html végzödésű linknél, amire rákattint a felhasználó */
+    color: whitesmoke;
+}
+
+ul li[class="menu"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
+    box-shadow: 0 0 25px;
+    background-color: yellow;
+}
+
+a[href*="#"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
+    background-color: brown;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+img[src^="http"]:hover{
+    box-shadow: 0 0 30px ;
+}
+ol li:first-child{
+    color: orange;
+    font-weight: bolder;
+}
+ol li:last-child{
+    color: orangered;
+    font-weight: bolder;
+}
+ul{
+    font-family: 'Mulish-Bold';
+}
+td{
+    text-align: center;
+    padding: 10px;
 }
