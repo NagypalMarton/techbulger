@@ -19,6 +19,12 @@ body{
     line-height: 25px;/*Sortávolság*/
     background-color: whitesmoke;
     padding: 2% 0%;
+    min-width: auto;
+}
+iframe{
+    margin-top: 3%;
+    box-shadow: 0 0 20px gray;
+    max-width: 90%;
 }
 html{
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
@@ -49,8 +55,8 @@ ul,link{
 img{
     display: block;
     margin: 0% auto;
-    max-width: 45%;
-    min-width: 20%;
+    max-width: 55%;
+    min-width: 35%;
 }
 a{
     color: black;
