@@ -1,21 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saját Bootstrap Oldal</title>
     <link rel="stylesheet" href="/styles/bootstrap-5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a7784e02ad.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <ul id="menu">
-        <li class="menu"><a href="/index.html">Kezdőoldal</a></li>
-        <li class="menu"><a href="pages/products.html">Termékek</a></li>
-        <li class="menu"><a href="pages/orders.html">Rendelés</a></li>
-        <li class="menu"><a href="pages/price.html">Áraink</a></li>
-        <li class="menu"><a href="pages/contact.html">Rólunk</a></li>
-        <li class="menu"><a href="pages/bt.html">Saját Bootstrap Oldal</a></li>
-    </ul>
-    <h1>Ez egy Bootstrap Framework-kel készült oldal</h1>
+    <script src="/styles/bootstrap-5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <nav class="navbar sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"> <i class="fa-solid fa-microchip"></i> TechBurger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Kezdőoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Oldalaink Legördülő Menüben
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/pages/products.html">Termékek</a></li>
+                            <li><a class="dropdown-item" href="/pages/orders.html">Rendelés</a></li>
+                            <li><a class="dropdown-item" href="/pages/price.html">Áraink</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/pages/contact.html">Rólunk</a></li>
+                            <li><a class="dropdown-item" href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Keresés az oldalon" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Keresés</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <!--Első-->
+            </div>
+            <div class="col-8">
+                <h1>Egy teszt Bootstrap Oldal</h1>
+                <h2>Minta oldal</h2>
+                <table class="table table-striped-columns">
+                    <caption>Néhány Színházi előadás</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Előadás</th>
+                            <th scope="col">Rendező</th>
+                            <th scope="col">Színház</th>
+                            <th scope="col">Műveletek</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-warning shadow">Módosítás<i
+                                            class="fa-solid fa-pen-nib"></i></button>
+                                    <button type="button" class="btn btn-outline-danger shadow">Törlés <i
+                                            class="fa-solid fa-dumpster-fire"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover"
+                data-bs-placement="right" data-bs-content="A gombok szandekosan nem mukodnek!">
+                Magyarázó! gomb
+            </button>
+            </div>
+            <div class="col-2">
+                <!--Harmadik-->
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
