@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;1,500&display=swap');
 @font-face {
     font-family: "Mulish";
-    src: url(/techbulger/styles/fonts/Mulish-VariableFont_wght.ttf);
+    src: url(/styles/fonts/Mulish-VariableFont_wght.ttf);
     font-weight: 500;
 }
 @font-face {
     font-family: "Mulish-Light";
-    src: url(/techbulger/styles/fonts/Mulish-Italic-VariableFont_wght.ttf);
+    src: url(/styles/fonts/Mulish-Italic-VariableFont_wght.ttf);
     font-weight: 300;
 }
 @font-face{
     font-family: "Mulish-Bold";
-    src: url(/techbulger/styles/fonts/static/Mulish-Bold.ttf);
+    src: url(/styles/fonts/static/Mulish-Bold.ttf);
     font-weight: 700;
 }
 body{

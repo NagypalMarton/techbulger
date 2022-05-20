@@ -17,7 +17,7 @@
     <li class="menu"><a href="/pages/contact.html">Rólunk</a></li>
     <li class="menu"><a href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
 </ul>
-<h2>Rendelés feladása</h2>
+<h2>Rendelés</h2>
 <fieldset>
     <legend>Hogy zajlik a rendelés nálunk?</legend>
     <ol>
@@ -87,6 +87,22 @@
     </div>
 </fieldset>
 <fieldset>
+    <legend>A kiválasztott keedvezmény az Áraink oldalról</legend>
+    <p>A <i>Szabad kedvezmény</i> automatikusan aktiválódik az adott napnak megfelelően! Valamint A megfelelő papírok feltöltésével és a feltételek teljesülése esetén alkalmazásra kerülnek a kedvezmények! </p>
+    <div>
+        <input type="radio" name="kedv" id="hall">
+        <label for="hall">Diák/Hallgató kedvezmény</label>
+    </div>
+    <div>
+        <input type="radio" name="kedv" id="nyug">
+        <label for="nyug">Nyugdíjas akció</label>
+    </div>
+    <div>
+        <input type="radio" name="kedv" id="kozal">
+        <label for="kozal">Közalkalmazotti kedvezmény</label>
+    </div>
+</fieldset>
+<fieldset>
     <legend>Szállítás módja</legend>
     <select name="szall" id="szall">
         <option value="Norm">Normális (1 héten belül)</option>
@@ -119,6 +135,12 @@
         </div>
     </form>
 </fieldset>
+<div>
+    <span>Kedvezmény nélküli összeg: </span>
+    <span>Kedvezmény: </span>
+    <span>A rendelés végösszege: </span>
+</div>
+<br>
 <div class="form-group">
     <button class="submit-btn">Rendelés elküldése</button>
 </div>
