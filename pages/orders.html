@@ -61,7 +61,10 @@
         <legend>Mennyit szeretnél belőlük rendelni?</legend>
         <div class="form-class">
             <label for="number">Mennyiség: </label>
-            <input type="number" name="amount-input">
+            <input type="number" name="amount-input" value="1" required>
+            <small>
+                Min:1, Max: 10
+            </small>
         </div>
     </fieldset>
     <fieldset>
@@ -125,20 +128,20 @@
         <form action="" class="form-class">
             <div class="form-group">
                 <label for="nev">Név:</label>
-                <input class="form-control blue" type="text" name="nev" id="nev">
+                <input class="form-control blue" type="text" name="nev" id="nev" required>
             </div>
             <div class="form-group">
                 <label for="email">Email cím:</label>
                 <!--Címkézés-->
-                <input class="form-control" type="email" name="email" id="email">
+                <input class="form-control" type="email" name="email" id="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Jelszó:</label>
-                <input class="form-control" type="password" name="password" id="password">
+                <input class="form-control" type="password" name="password" id="password" required>
             </div>
             <div class="form-group">
                 <label for="szallitasi">Szállítási cím:</label>
-                <input class="form-control" type="text" name="szallitasi" id="szallitasi">
+                <input class="form-control" type="text" name="szallitasi" id="szallitasi" required>
             </div>
             <div class="form-group">
                 <label for="comment">Megjegyzés:</label>
@@ -149,7 +152,8 @@
     <div>
         Megrendelt mennyiség: <span class="show-mennyiseg">0 </span>
         Kedvezmény nélküli összeg: <span class="show-amount-kedvnel">0 </span>
-        Kedvezmény:<span class="show-amount-kedvneve">Nincs </span>
+        Kedvezmény Neve:<span class="show-amount-kedvneve">Nincs </span>
+        Kedvezmény:<span class="show-amount-kedverteke">Nincs </span>
         A rendelés végösszege:<span class="show-amount-kedv"> 0</span>
     </div>
     <br>

@@ -80,3 +80,44 @@ console.log(parseInt("Hall33"))
 console.log(parseInt("22Hall34"))
 console.log(parseFloat("22.65"))
 console.log(parseFloat("f22.65"))
+
+/*Metódus*/
+Mit tud csinálni egy típus
+length => str hossza
+trim() Eltávolítja a felesleges szóközöket, amelyek a String előtt és után találhatóak.
+﻿concat()\tt concat()concat()﻿
+Új karaktereket fűz hozzá a meglévő Stringhez.
+﻿toLowerCase()\tt toLowerCase()toLowerCase()﻿
+Kisbetűssé alakítja az adott Stringet.
+﻿toUpperCase()\tt toUpperCase()toUpperCase()﻿
+Az előzővel ellentétben nagybetűssé alakítja a karaktereket.
+
+/*Keresés és módosítás egy Stringen belül*/
+indexOf()﻿
+Megkeresi a Stringen belül egy adott szövegrész kezdetét.
+A kezdő karakter indexét adja vissza, amely 0-tól kezdődik, azaz az első karakter a 0 sorszámú és így tovább.
+
+replace()﻿
+Kicseréli a megadott szövegrészt a Stringen belül. Ahogy a példában is látni fogod, ennek a metódusnak kettő darab úgynevezett paramétere van, tehát két adatot kell a zárójelek között megadni:
+
+    először azt, amit cserélni szeretnél,
+    azután pedig azt, amire ki szeretnéd cserélni.
+
+/*Boolean => IGAZ/HAMIS*/
+    0 => HAMIS
+    1 => IGAZ
+Logikai kifejezés => Olyan kifejezés, amely kiértékelése után ﻿true\tt truetrue﻿ vagy ﻿false\tt falsefalse﻿ értéket ad vissza.
+operátorok: >, <, >=, <=, 
+    == megegyező érték, === megegyező érték és típus,
+    != nem megegyező érték,
+!== nem megegyező érték és típus,
+! tagadás - logikai érték megfordítása,
+&& és,
+|| vagy
+10 + "text"     // "10text" - a számot szövegként kezelte  
+10 + "10"       // "1010" - a számot szövegként kezelte most is, azonban:  
+10 - "1"        // 9, tehát kivonás esetében számként kezelte  
+10 + true       // 11, a true-t 1-nek veszi  
+10 - true       // 9  
+10 + false      // 10, a false-t 0-nak tekinti  
+"10" + true     // "10true", a boolean értéket string-nek veszis
