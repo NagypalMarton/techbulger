@@ -95,6 +95,9 @@ span{
     display: block;
     font-weight: bolder;
 }
+span[class="show-*"]{
+    display: inline;
+}
 caption{
     background-color: brown;
     color: white;
@@ -157,5 +160,8 @@ fieldset,button{
 .form-class input:focus, .form-class textarea:focus{
     box-shadow: 0 0 15xp;
     background-color: lemonchiffon;
+    font-weight: bolder;
+}
+input[type="checkbox"]:active,input[type="radio"]:active{
     font-weight: bolder;
 }

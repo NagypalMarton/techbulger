@@ -1,0 +1,82 @@
+console.log("Hello, This is the console Message!");
+let price1=5; /* definició*/
+console.log(price1);
+let price2=10;
+console.log(price2);
+let total=price1+price2;
+console.log(total);
+let name;/* deklalálás;= => érték adó operátor*/
+
+const szo='Étlap'; /* Állandó, nem lehet megváltoztatni az értékét és cak ilyenkor lehet értéket adni*/
+console.log(szo);/*camelCase => Szavak kezdetét nagy betűkkel */
+
+/*változók*/
+Boolean
+Number
+String
+null
+undefined
+typeof Number
+typeof szo
+let bool=true
+typeof bool
+/*tulajdonságok, metódusok lekérdezése */
+price2.toString()
+szo.length
+szo.replace("a","b")
+
+/*számok*/
+let userAge=33;
+userAge=userAge-5;
+userAge=userAge/2;
+console.log(userAge);
+/*mARADÉKOT ad vissza */
+console.log(6%3)
+console.log(6%5)
+/*precedencia szabály*/
+console.log(((2+3*2/(5+8))%5)**6)
+
+/*String */
+let UserName="Kiss Péter"
+let userName='Nagy József'
+console.log(UserName)
+console.log(typeof UserName)
+console.log(UserName.length)
+console.log(typeof userName)
+let UM=userName + " " + UserName
+console.log(UM)
+
+/*Létezik? */
+let carName
+console.log(typeof carName)
+carName="fIAT tIPE"
+console.log(typeof carName)
+carName=null /*Kiürítettem */
+console.log(typeof carName)
+
+/*Átalakítások */
+let door='11'
+/*implicit */
+console.log(door)
+console.log(door*2)
+console.log(door-2)
+console.log(door/2)
+console.log(door+2)/*Ilyenkor a string az erőssebb */
+/*Kénysszerítés Explicit*/
+console.log(String(door)+2)
+console.log(Number(door)+2)
+let dooor='Hello'
+console.log(Number(dooor))
+userAge=33
+console.log(String(33))
+console.log(typeof userAge.toString()) /*ez gyorsabb */
+let amount = 653.2134234
+/*Kerekíti */
+console.log(amount.toFixed(2))
+console.log(amount.toPrecision(7))/*Összes számjegyre érvényes */
+console.log(parseInt("22"))
+console.log(parseInt("22Hall"))
+console.log(parseInt("Hall33"))
+console.log(parseInt("22Hall34"))
+console.log(parseFloat("22.65"))
+console.log(parseFloat("f22.65"))

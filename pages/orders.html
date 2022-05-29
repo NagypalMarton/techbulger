@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,142 +8,155 @@
     <title>Rendelés</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+
 <body>
-   <h1>Rendelés</h1>
-<ul id="menu">
-    <li class="menu"><a href="/index.html">Kezdőoldal</a></li>
-    <li class="menu"><a href="/pages/products.html">Termékek</a></li>
-    <li class="menu"><a href="/pages/orders.html">Rendelés</a></li>
-    <li class="menu"><a href="/pages/price.html">Áraink</a></li>
-    <li class="menu"><a href="/pages/contact.html">Rólunk</a></li>
-    <li class="menu"><a href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
-</ul>
-<h2>Rendelés</h2>
-<fieldset>
-    <legend>Hogy zajlik a rendelés nálunk?</legend>
-    <ol>
-        <li>Válaszd ki a megfelelő Tech Burgert!</li>
-        <li>Ha kell, kérj hozzá plusz konfigurációt!</li>
-        <li>Add meg a címedet!</li>
-        <li>Vedd át a csomagodat!</li>
-        <li>Értékeld az oldalt és mondd el a véleményedet!</li>
-    </ol>
-</fieldset>
-<fieldset>
-    <legend>A Termékek oldalon választott árú megadása</legend>
-    <div>
-        <input type="checkbox" name="CLP" id="CLP">
-        <label for="CLP">Console Lover Player</label>
-    </div>
-    <div>
-        <input type="checkbox" name="BGCD" id="BGCD">
-        <label for="BGCD">Best Gaming Computer Device</label>
-    </div>
-    <div>
-        <input type="checkbox" name="MRC" id="MRC">
-        <label for="MRC">Mini Raspberry Clone</label>
-    </div>
-    <div>
-        <input type="checkbox" name="OBPC" id="OBPC">
-        <label for="OBPC">Only Browsing PC</label>
-    </div>
-    <div>
-        <input type="checkbox" name="MBaPC" id="MBaPC">
-        <label for="MBaPC">Mini Barbone PC</label>
-    </div>
-    <div>
-        <input type="checkbox" name="MaMiPC" id="MaMiPC">
-        <label for="MaMiPC">Maxi Mini PC</label>
-    </div>
-</fieldset>
-<fieldset>
-    <legend>A Termékek oldalon választott árú extra megadása</legend>
-    <div>
-        <input type="radio" name="extra" id="vd">
-        <label for="vd">Videókártya csere</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="mem">
-        <label for="mem">Memória bővítés</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="al">
-        <label for="al">Alaplap csere</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="ht">
-        <label for="ht">Plusz háttértár</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="min">
-        <label for="min">Mindegyiket kérem</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="not">
-        <label for="not">Egyiket sem</label>
-    </div>
-    <div>
-        <input type="radio" name="extra" id="megj">
-        <label for="megj">Megjegyzésben van</label>
-    </div>
-</fieldset>
-<fieldset>
-    <legend>A kiválasztott keedvezmény az Áraink oldalról</legend>
-    <p>A <i>Szabad kedvezmény</i> automatikusan aktiválódik az adott napnak megfelelően! Valamint A megfelelő papírok feltöltésével és a feltételek teljesülése esetén alkalmazásra kerülnek a kedvezmények! </p>
-    <div>
-        <input type="radio" name="kedv" id="hall">
-        <label for="hall">Diák/Hallgató kedvezmény</label>
-    </div>
-    <div>
-        <input type="radio" name="kedv" id="nyug">
-        <label for="nyug">Nyugdíjas akció</label>
-    </div>
-    <div>
-        <input type="radio" name="kedv" id="kozal">
-        <label for="kozal">Közalkalmazotti kedvezmény</label>
-    </div>
-</fieldset>
-<fieldset>
-    <legend>Szállítás módja</legend>
-    <select name="szall" id="szall">
-        <option value="Norm">Normális (1 héten belül)</option>
-        <option value="Fast">Gyors (Akár másnap)</option>
-        <option value="VFast">Nagyon Gyors (Aznapi kiszállítás)</option>
-    </select>
-</fieldset>
-<fieldset>
-    <legend>Személyes Adatok</legend>
-    <form action="" class="form-class">
-        <div class="form-group">
-            <label for="nev">Név:</label>
-            <input class="form-control blue" type="text" name="nev" id="nev">
+    <h1>Rendelés</h1>
+    <ul id="menu">
+        <li class="menu"><a href="/index.html">Kezdőoldal</a></li>
+        <li class="menu"><a href="/pages/products.html">Termékek</a></li>
+        <li class="menu"><a href="/pages/orders.html">Rendelés</a></li>
+        <li class="menu"><a href="/pages/price.html">Áraink</a></li>
+        <li class="menu"><a href="/pages/contact.html">Rólunk</a></li>
+        <li class="menu"><a href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
+    </ul>
+    <h2>Rendelés</h2>
+    <fieldset>
+        <legend>Hogy zajlik a rendelés nálunk?</legend>
+        <ol>
+            <li>Válaszd ki a megfelelő Tech Burgert!</li>
+            <li>Ha kell, kérj hozzá plusz konfigurációt!</li>
+            <li>Add meg a címedet!</li>
+            <li>Vedd át a csomagodat!</li>
+            <li>Értékeld az oldalt és mondd el a véleményedet!</li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>A Termékek oldalon választott árú megadása</legend>
+        <div>
+            <input type="checkbox" name="CLP" id="CLP">
+            <label for="CLP">Console Lover Player</label>
         </div>
-        <div class="form-group">
-            <label for="email">Email cím:</label><!--Címkézés-->
-            <input class="form-control" type="email" name="email" id="email">
+        <div>
+            <input type="checkbox" name="BGCD" id="BGCD">
+            <label for="BGCD">Best Gaming Computer Device</label>
         </div>
-        <div class="form-group">
-            <label for="password">Jelszó:</label>
-            <input class="form-control" type="password" name="password" id="password">
+        <div>
+            <input type="checkbox" name="MRC" id="MRC">
+            <label for="MRC">Mini Raspberry Clone</label>
         </div>
-        <div class="form-group">
-            <label for="szallitasi">Szállítási cím:</label>
-            <input class="form-control" type="text" name="szallitasi" id="szallitasi">
+        <div>
+            <input type="checkbox" name="OBPC" id="OBPC">
+            <label for="OBPC">Only Browsing PC</label>
         </div>
-        <div class="form-group">
-            <label for="comment">Megjegyzés:</label>
-            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <div>
+            <input type="checkbox" name="MBaPC" id="MBaPC">
+            <label for="MBaPC">Mini Barbone PC</label>
         </div>
-    </form>
-</fieldset>
-<div>
-    <span>Kedvezmény nélküli összeg: </span>
-    <span>Kedvezmény: </span>
-    <span>A rendelés végösszege: </span>
-</div>
-<br>
-<div class="form-group">
-    <button class="submit-btn">Rendelés elküldése</button>
-</div>
+        <div>
+            <input type="checkbox" name="MaMiPC" id="MaMiPC">
+            <label for="MaMiPC">Maxi Mini PC</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Mennyit szeretnél belőlük rendelni?</legend>
+        <div class="form-class">
+            <label for="number">Mennyiség: </label>
+            <input type="number" name="amount-input">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>A Termékek oldalon választott árú extra megadása</legend>
+        <div>
+            <input type="radio" name="extra" id="vd">
+            <label for="vd">Videókártya csere</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="mem">
+            <label for="mem">Memória bővítés</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="al">
+            <label for="al">Alaplap csere</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="ht">
+            <label for="ht">Plusz háttértár</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="min">
+            <label for="min">Mindegyiket kérem</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="not">
+            <label for="not">Egyiket sem</label>
+        </div>
+        <div>
+            <input type="radio" name="extra" id="megj">
+            <label for="megj">Megjegyzésben van</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>A kiválasztott kedvezmény az Áraink oldalról</legend>
+        <p>A <i>Szabad kedvezmény</i> automatikusan aktiválódik az adott napnak megfelelően! Valamint A megfelelő
+            papírok feltöltésével és a feltételek teljesülése esetén alkalmazásra kerülnek a kedvezmények! </p>
+        <div>
+            <input type="radio" name="kedv" id="hall">
+            <label for="hall">Diák/Hallgató kedvezmény</label>
+        </div>
+        <div>
+            <input type="radio" name="kedv" id="nyug">
+            <label for="nyug">Nyugdíjas akció</label>
+        </div>
+        <div>
+            <input type="radio" name="kedv" id="kozal">
+            <label for="kozal">Közalkalmazotti kedvezmény</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Szállítás módja</legend>
+        <select name="szall" id="szall">
+            <option value="Norm">Normális (1 héten belül)</option>
+            <option value="Fast">Gyors (Akár másnap)</option>
+            <option value="VFast">Nagyon Gyors (Aznapi kiszállítás)</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>Személyes Adatok</legend>
+        <form action="" class="form-class">
+            <div class="form-group">
+                <label for="nev">Név:</label>
+                <input class="form-control blue" type="text" name="nev" id="nev">
+            </div>
+            <div class="form-group">
+                <label for="email">Email cím:</label>
+                <!--Címkézés-->
+                <input class="form-control" type="email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Jelszó:</label>
+                <input class="form-control" type="password" name="password" id="password">
+            </div>
+            <div class="form-group">
+                <label for="szallitasi">Szállítási cím:</label>
+                <input class="form-control" type="text" name="szallitasi" id="szallitasi">
+            </div>
+            <div class="form-group">
+                <label for="comment">Megjegyzés:</label>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            </div>
+        </form>
+    </fieldset>
+    <div>
+        Megrendelt mennyiség: <span class="show-mennyiseg">0 </span>
+        Kedvezmény nélküli összeg: <span class="show-amount-kedvnel">0 </span>
+        Kedvezmény:<span class="show-amount-kedvneve">Nincs </span>
+        A rendelés végösszege:<span class="show-amount-kedv"> 0</span>
+    </div>
+    <br>
+    <div class="form-group">
+        <button onclick="ordersTextChance()" class="submit-btn">Rendelés elküldése</button>
+    </div>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
