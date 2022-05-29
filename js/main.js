@@ -14,7 +14,7 @@ function ordersTextChance() {
     showAmount.innerHTML=amouant1+" Ft"
     showDarab.innerHTML= showDarab+" db"
 
-    let kedvInput=document.querySelector("input[type=radio]")
+    let kedvInput=document.querySelector("input[type=radio]:checked")
     let showKedvNev=document.querySelector("span.show-amount-kedvneve")
     showKedvNev.innerHTML=kedvInput.value
 
