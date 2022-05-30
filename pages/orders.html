@@ -33,27 +33,27 @@
     <fieldset>
         <legend>A Termékek oldalon választott árú megadása</legend>
         <div>
-            <input type="checkbox" name="CLP" id="CLP">
+            <input class="form-input" type="checkbox" name="CLP" id="CLP">
             <label for="CLP">Console Lover Player</label>
         </div>
         <div>
-            <input type="checkbox" name="BGCD" id="BGCD">
+            <input class="form-input" type="checkbox" name="BGCD" id="BGCD">
             <label for="BGCD">Best Gaming Computer Device</label>
         </div>
         <div>
-            <input type="checkbox" name="MRC" id="MRC">
+            <input class="form-input" type="checkbox" name="MRC" id="MRC">
             <label for="MRC">Mini Raspberry Clone</label>
         </div>
         <div>
-            <input type="checkbox" name="OBPC" id="OBPC">
+            <input class="form-input" type="checkbox" name="OBPC" id="OBPC">
             <label for="OBPC">Only Browsing PC</label>
         </div>
         <div>
-            <input type="checkbox" name="MBaPC" id="MBaPC">
+            <input class="form-input" type="checkbox" name="MBaPC" id="MBaPC">
             <label for="MBaPC">Mini Barbone PC</label>
         </div>
         <div>
-            <input type="checkbox" name="MaMiPC" id="MaMiPC">
+            <input class="form-input" type="checkbox" name="MaMiPC" id="MaMiPC">
             <label for="MaMiPC">Maxi Mini PC</label>
         </div>
     </fieldset>
@@ -61,40 +61,40 @@
         <legend>Mennyit szeretnél belőlük rendelni?</legend>
         <div class="form-class">
             <label for="number">Mennyiség: </label>
-            <input type="number" name="amount-input" value="1" required>
+            <input class="form-input" type="number" name="amount-input" value="1" required>
             <small>
-                Min:1, Max: 10
+                Minimum 1 és maximum 10 darab lehet!
             </small>
         </div>
     </fieldset>
     <fieldset>
         <legend>A Termékek oldalon választott árú extra megadása</legend>
         <div>
-            <input type="radio" name="extra" id="vd">
+            <input class="form-input" type="radio" name="extra" id="vd">
             <label for="vd">Videókártya csere</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="mem">
+            <input class="form-input" type="radio" name="extra" id="mem">
             <label for="mem">Memória bővítés</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="al">
+            <input class="form-input" type="radio" name="extra" id="al">
             <label for="al">Alaplap csere</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="ht">
+            <input class="form-input" type="radio" name="extra" id="ht">
             <label for="ht">Plusz háttértár</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="min">
+            <input class="form-input" type="radio" name="extra" id="min">
             <label for="min">Mindegyiket kérem</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="not">
+            <input class="form-input" type="radio" name="extra" id="not">
             <label for="not">Egyiket sem</label>
         </div>
         <div>
-            <input type="radio" name="extra" id="megj">
+            <input class="form-input" type="radio" name="extra" id="megj">
             <label for="megj">Megjegyzésben van</label>
         </div>
     </fieldset>
@@ -103,15 +103,15 @@
         <p>A <i>Szabad kedvezmény</i> automatikusan aktiválódik az adott napnak megfelelően! Valamint A megfelelő
             papírok feltöltésével és a feltételek teljesülése esetén alkalmazásra kerülnek a kedvezmények! </p>
         <div>
-            <input type="radio" name="kedv" id="hall">
+            <input class="form-input" type="radio" name="kedv" id="hall">
             <label for="hall">Diák/Hallgató kedvezmény</label>
         </div>
         <div>
-            <input type="radio" name="kedv" id="nyug">
+            <input class="form-input" type="radio" name="kedv" id="nyug">
             <label for="nyug">Nyugdíjas akció</label>
         </div>
         <div>
-            <input type="radio" name="kedv" id="kozal">
+            <input class="form-input" type="radio" name="kedv" id="kozal">
             <label for="kozal">Közalkalmazotti kedvezmény</label>
         </div>
     </fieldset>
@@ -122,6 +122,8 @@
             <option value="Fast">Gyors (Akár másnap)</option>
             <option value="VFast">Nagyon Gyors (Aznapi kiszállítás)</option>
         </select>
+        <br>
+        <small>Jelenleg mindhárom mód egy árban van!</small>
     </fieldset>
     <fieldset>
         <legend>Személyes Adatok</legend>
@@ -149,16 +151,56 @@
             </div>
         </form>
     </fieldset>
-    <div>
-        Megrendelt mennyiség: <span class="show-mennyiseg">0 </span>
-        Kedvezmény nélküli összeg: <span class="show-amount-kedvnel">0 </span>
-        Kedvezmény Neve:<span class="show-amount-kedvneve">Nincs </span>
-        Kedvezmény:<span class="show-amount-kedverteke">Nincs </span>
-        A rendelés végösszege:<span class="show-amount-kedv"> 0</span>
-    </div>
+
+    <table class="center">
+        <thead>
+            <caption>Összegzés</caption>
+            <tr>
+                <th colspan="2">Rendelés adatati</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Megrendelt mennyiség:</td>
+                <td><span class="show-mennyiseg">0 db</span></td>
+            </tr>
+            <tr>
+                <td>Kedvezmény nélküli:</td>
+                <td><span class="show-amount-kedvnel">0 $</span></td>
+            </tr>
+            <tr>
+                <td>Kedvezmény Neve:</td>
+                <td><span class="show-amount-kedvneve">Nincs kiválasztva</span></td>
+            </tr>
+            <tr>
+                <td>Kedvezmény:</td>
+                <td><span class="show-amount-kedverteke">Nincs kiválasztva</span></td>
+            </tr>
+            <tr>
+                <td>Szállítás módja:</td>
+                <td><span class="show-delivery-name">Nincs kiválasztva</span></td>
+            </tr>
+            <tr>
+                <td>Szállítás összege:</td>
+                <td><span class="show-delivery-amount">0 $</span></td>
+            </tr>
+            <tr>
+                <td>A rendelés végösszege: <br><small>Szállítási összeg nélkül</small></td>
+                <td><span class="show-amount-kedv">0 $</span></td>
+            </tr>
+            <tr>
+                <td>A rendelés végösszege: <br><small>Szállítási összeggel</small></td>
+                <td><span class="show-amount-kedv-der">0 $</span></td>
+            </tr>
+        </tbody>
+    </table>
+
     <br>
     <div class="form-group">
-        <button onclick="ordersTextChance()" class="submit-btn">Rendelés elküldése</button>
+        <button onclick="ordersTextChance()" class="submit-btn">Ellenőrzés</button>
+    </div>
+    <div class="form-group">
+        <button onclick="RendelesKuldese()" class="submit-btn">Rendelés elküldése</button>
     </div>
     <script src="/js/main.js"></script>
 </body>
