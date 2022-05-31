@@ -160,10 +160,22 @@ fieldset,button{
     border: solid 2px darkslategrey;
 }
 .form-class input:focus, .form-class textarea:focus{
-    box-shadow: 0 0 15xp;
+    box-shadow: 0 0 15px;
     background-color: lemonchiffon;
     font-weight: bolder;
 }
 input[type="checkbox"]:active,input[type="radio"]:active{
     font-weight: bolder;
+}
+div[class*="soros"],span[class*="soros"]{
+    display: inline;
+    background-color: olivedrab;
+    padding: 1%;
+    box-shadow: 0 0 15px;
+    color: white;
+}
+span[class*="soros"]{
+    margin-left: 1%;
+    box-shadow: 0 0 0px;
+    margin: auto;
 }

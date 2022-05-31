@@ -20,6 +20,23 @@
         <li class="menu"><a href="pages/contact.html">Rólunk</a></li>
         <li class="menu"><a href="pages/bt.html">Saját Bootstrap Oldal</a></li>
     </ul>
+
+    <div class="contant soros">
+        <select name="HetNap" id="HetNap">
+            <option value="0">Hétfő</option>
+            <option value="1">Kedd</option>
+            <option value="2">Szerda</option>
+            <option value="3">Csütörtök</option>
+            <option value="4">Péntek</option>
+            <option value="5">Szombat</option>
+            <option value="6">Vasárnap</option>
+        </select>
+        <button>Ajánlat Megtekintése</button>
+        <span onclick="weatherWidget()" class="soros">Napi Ajánlat</span>
+        <span class="soros"></span>
+        <script src="/js/napiajanlat.js"></script>
+    </div>
+    
     <p class="contant">
         <span>Mi a Lorem Ipsum?</span>
 
