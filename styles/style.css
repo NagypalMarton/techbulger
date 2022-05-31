@@ -117,7 +117,7 @@ a[href*="#"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetle
     color: whitesmoke;
     font-weight: bolder;
 }
-img[src^="http"]:hover{
+img[src^="http"]:hover{/*Összes http kezdetű linknél, amire rákattint a felhasználó */
     box-shadow: 0 0 30px ;
 }
 tr:nth-child(2n+0){/*táblázatoknál minden 2. sor legyen ilyen*/
@@ -140,6 +140,8 @@ td{
 table, tr,td{
     border-collapse: collapse;
     border: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 fieldset,button{
     margin: 0% 3% 3%;
