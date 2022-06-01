@@ -121,3 +121,42 @@ operátorok: >, <, >=, <=,
 10 - true       // 9  
 10 + false      // 10, a false-t 0-nak tekinti  
 "10" + true     // "10true", a boolean értéket string-nek veszis
+
+/*var test = [[1, 'szoveg'][true, false]]
+
+ Primitív változó típusok: ﻿Boolean, Number,  \tt Boolean,\,Number,\,Boolean,Number,﻿﻿String, Undefined, Null\tt String,\,Undefined,\,NullString,Undefined,Null*/
+/*slice(start,end) ha minusz, akkor a végén kezdi a vágást
+splice(index,howmany,item1,item2) eredetit módosítja és hozzáadja
+join() => tömb elemeiből stringet csinál
+
+alert("A week_temp Tömb-e? " + Array.isArray(week_temp))
+    week_temp.push("54")/*Érték hozzáadása a végére*/
+   /* alert("A tömb értékei: " + week_temp)
+    week_temp.pop("54")/*Elem elvétele a végéről*/
+   /* week_temp.unshift("43")/*Elem hozzadása az elejéhez */
+   /* week_temp.shift(4)/*elem elvétele bárhonnan*/
+   /* alert("A tömb 0. értékei: " + week_temp[0] + ' ' + test[0][1])
+*/
+
+Ciklusok
+========
+for
+for (var i=0; i<5;i++){
+    console.log(i)
+}
+
+tomb bejarasa
+for (var i=0; i<arr.length;i++){
+    console.log(i)
+}
+continue => ha valamiért úgy döntesz, hogy mégsem akarod lefuttatni a teljes ciklusmagot
+break => megszakítja a ciklust, azaz a ciklusmag többet nem kerül végrehajtásra, úgy is mondhatnánk, a program továbbmegy.
+
+Compound operators
+Hozzáadás: ﻿x = x + 10 \texttt {x = x + 10} x = x + 10﻿ helyett ﻿x += 10 \texttt {x += 10} x += 10﻿
+Kivonás: ﻿x = x - 10 \texttt {x = x - 10} x = x - 10﻿ helyett ﻿x -= 10 \texttt {x -= 10} x -= 10﻿
+Osztás: ﻿x = x / 2 \texttt {x = x / 2} x = x / 2﻿ helyett ﻿x /= 2 \texttt {x /= 2} x /= 2﻿
+Modulus (maradék): ﻿x = x % 2 \texttt {x = x \% 2} x = x % 2﻿ helyett ﻿x %= 2 \texttt {x \%= 2} x %= 2﻿
+Szorzás: ﻿x = x * 10 \texttt {x = x * 10} x = x * 10﻿ helyett ﻿x *= 10 \texttt {x *= 10} x *= 10
+
+tenary => let variablename = (condition) ? value1: value2﻿

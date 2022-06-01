@@ -1,9 +1,24 @@
-let week_temp=[5,4,56]
+let week_temp = [5.4, 10.9, 25.5, 33, 12, 0, 20]
+const week_temp_high=[0,15,20,25]
+const napi_ajanl=['forró csoki','meleg tea','fagyi','jéghideg limonadé']
+
 function weatherWidget() {
-    alert("A week_temp Tömb-e? "+Array.isArray(week_temp))
-    week_temp.push("54")/*Érték hozzáadása a végére*/
-    alert("A tömb értékei: "+week_temp)
-    week_temp.pop("54")/*Elem elvétele a végéről*/
-    week_temp.unshift("43")/*Elem hozzadása az elejéhez */
-    week_temp.shift(4)/*elem elvétele bárhonnan*/
+    let hetNapja=document.querySelector('select[id="HetNap"]').value
+    let showWeekTemp=document.querySelector('span#Homer')/*id-s szelektor */
+    let akt_temp=week_temp[hetNapja]
+    showWeekTemp.innerHTML=akt_temp+' Celsius van!'
+    napi_ajanl(akt_temp)
+}
+function napi_ajanl(akt_temps) {
+    var showAjalnlat=document.querySelector('span#Ajanlat')
+    if (akt_temps<0) {
+        showAjalnlat.innerHTML='Mai ajánlat: forró csoki'
+    } else if (akt_temps<20) {
+        showAjalnlat.innerHTML='Mai ajánlat: meleg tea'
+    } else if (akt_temps<25){
+        showAjalnlat.innerHTML='Mai ajánlat: fagyi'
+    }else{
+        showAjalnlat.innerHTML='Mai ajánlat: jéghideg limonádé'
+    }
+    alert('Ajánlatunk csak a Mucsaröcsögei Cukrászda és KészMűves Fagyizó KFT. BTK-nál érvényesíthető!')
 }

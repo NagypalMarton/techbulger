@@ -169,13 +169,15 @@ input[type="checkbox"]:active,input[type="radio"]:active{
 }
 div[class*="soros"],span[class*="soros"]{
     display: inline;
-    background-color: olivedrab;
+    background-color: orangered;
     padding: 1%;
-    box-shadow: 0 0 15px;
+    border: dashed 3px yellowgreen;
     color: white;
+
 }
 span[class*="soros"]{
     margin-left: 1%;
+    padding: 0%;
     box-shadow: 0 0 0px;
-    margin: auto;
+    border: none;
 }
