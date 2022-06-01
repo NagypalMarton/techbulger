@@ -16,14 +16,6 @@ function napi_ajanl(akt_temps) {
         showAjalnlat.innerHTML='Mai ajánlat: '+napi_ajanl[a]
       }
     }
-    if (akt_temps<0) {
-        showAjalnlat.innerHTML='Mai ajánlat: forró csoki'
-    } else if (akt_temps<20) {
-        showAjalnlat.innerHTML='Mai ajánlat: meleg tea'
-    } else if (akt_temps<25){
-        showAjalnlat.innerHTML='Mai ajánlat: fagyi'
-    }else{
-        showAjalnlat.innerHTML='Mai ajánlat: jéghideg limonádé'
-    }
+    
     alert('Ajánlatunk csak a Mucsaröcsögei Cukrászda és KészMűves Fagyizó KFT. BTK-nál érvényesíthető!')
 }
