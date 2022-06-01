@@ -11,6 +11,11 @@ function weatherWidget() {
 }
 function napi_ajanl(akt_temps) {
     var showAjalnlat=document.querySelector('span#Ajanlat')
+    for (let a = 0; a < week_temp_high.length; a++) {
+      if (akt_temps<week_temp_high[a]) {
+        showAjalnlat.innerHTML='Mai ajánlat: '+napi_ajanl[a]
+      }
+    }
     if (akt_temps<0) {
         showAjalnlat.innerHTML='Mai ajánlat: forró csoki'
     } else if (akt_temps<20) {
