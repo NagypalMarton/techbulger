@@ -50,12 +50,11 @@ function CheckValues(amountInput) { /*ellenőrzi, a bevitt értéket*/
 }
 
 function CheckInput() {/*Mezők kitöltésének ellenőrzése */
-    var showInput=document.querySelector('input')
+    var showInput=document.querySelector('input[class^="form-control"]')
     var BoolValues=true
     if (isNaN(showInput)) {
         alert("Nincs kitöltve az összes mező!")
         BoolValues=false
-        return
     }
     return BoolValues
 }
