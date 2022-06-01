@@ -7,9 +7,9 @@ function weatherWidget() {
     let showWeekTemp=document.querySelector('span#Homer')/*id-s szelektor */
     let akt_temp=week_temp[hetNapja]
     showWeekTemp.innerHTML=akt_temp+' Celsius van!'
-    napi_ajanl(akt_temp)
+    napi_ajanlFt(akt_temp)
 }
-function napi_ajanl(akt_temps) {
+function napi_ajanlFt(akt_temps) {
     var showAjalnlat=document.querySelector('span#Ajanlat')
     for (let a = 0; a < week_temp_high.length; a++) {
       if (akt_temps<week_temp_high[a]) {
