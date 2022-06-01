@@ -160,3 +160,25 @@ Modulus (maradék): ﻿x = x % 2 \texttt {x = x \% 2} x = x % 2﻿ helyett ﻿x 
 Szorzás: ﻿x = x * 10 \texttt {x = x * 10} x = x * 10﻿ helyett ﻿x *= 10 \texttt {x *= 10} x *= 10
 
 tenary => let variablename = (condition) ? value1: value2﻿
+
+Objektumok
+==========
+    Mutable: az adott változó értéke meg tud változni, tud mutálódni.
+    Immutable: értelemszerűen az előbbi ellentéte. Tehát az ilyen változót vagy értéket lehet olvasni, de írni - változtatni nem.
+    let user={
+  name:'Kiss Ramóna',
+  age: 20,
+  city:'Bp'
+}
+let admin=new Object();
+let costumer={};/*First Hand */
+alert(Object.keys(user)+' '+Object.values(user)+' - '+Object.entries(user)+' - '+Object.entries(user)[1])
+
+for... in ciklus
+    kulcsokon meg végig
+
+for...of ciklus
+    értékeken meg végig
+    Array-like lehet használni
+    ﻿let iterable =\texttt {let iterable =}let iterable =﻿ ﻿[10, 20, 30];\texttt{[10, 20, 30];}[10, 20, 30];﻿
+﻿for (let value of iterable)\texttt {for (let value of iterable)} for (let value of iterable)﻿ ﻿{ value += 1; console.log(value); } \texttt {\{    value += 1;  console.log(value);    \} }{ value += 1; console.log(value); } 
