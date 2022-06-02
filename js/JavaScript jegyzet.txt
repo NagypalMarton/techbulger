@@ -166,13 +166,19 @@ Objektumok
     Mutable: az adott változó értéke meg tud változni, tud mutálódni.
     Immutable: értelemszerűen az előbbi ellentéte. Tehát az ilyen változót vagy értéket lehet olvasni, de írni - változtatni nem.
     let user={
+        key: value,
   name:'Kiss Ramóna',
   age: 20,
   city:'Bp'
 }
 let admin=new Object();
 let costumer={};/*First Hand */
+
+Hivatkozás => user.name
+
 alert(Object.keys(user)+' '+Object.values(user)+' - '+Object.entries(user)+' - '+Object.entries(user)[1])
+
+elemeinek a számát nem tudjuk lekérni, de a kulcsok és az értékeinek is le
 
 for... in ciklus
     kulcsokon meg végig
