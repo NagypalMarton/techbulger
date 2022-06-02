@@ -1,9 +1,7 @@
 /*let week_temp = [5.4, 15.9, 25.5, 33, 14.7, -0.1, 20.6]
 const week_temp_high = [0, 15, 20, 25]
 const napi_ajanl = ['Forró Csoki', 'Meleg Tea', 'Fagyi', 'Jéghideg Limonadé']*/
-var data = getWeatherData();
-let data2=getWeatherData();
- data2.offers
+var data = getWeatherData()
 
 function weatherWidget() {
   let hetNapja = document.querySelector('select[id="HetNap"]').value
@@ -21,7 +19,7 @@ function weatherWidget() {
 }
 
 function showWeather(day) { /*Adott naphoz tartozó értéket megkeresi */
-  for (let weather of data.weathers) {/*Az értékekekn megy végig */
+  for (let weather of data['dayNumber']) {/*Az értékekekn megy végig */
     if (weather.dayNumber == hetNapja) {
       return weather
     }
