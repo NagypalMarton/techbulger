@@ -18,10 +18,11 @@ function weatherWidget() {
   showmax.innerHTML = 'Heti Max: ' + hetimax() + ' &#8451;'
 }
 
-function showWeather(day) { /*Adott naphoz tartozó értéket megkeresi */
-  for (const days of data.weathers.dayNumber) {
-    if (day == data.weathers.temp[days]) {
-      return data.weathers.temp[days]
+function showWeather(day) { /*Adott naphoz tartozó értéket megkeresi, mivel nem biztos, hogy sorrendben vannak */
+  for (const dayNum of data.weathers.dayNumber) {
+    if (day == dayNum) {
+      return dayNum
+      break
     }
   }
 }

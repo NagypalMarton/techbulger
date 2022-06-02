@@ -10,26 +10,26 @@ function getWeatherData() {
     "upperLimit": [0, 15, 20, 25],
     'offerMessage': ['Forró Csoki', 'Meleg Tea', 'Fagyi', 'Jéghideg Limonadé']
   };
-  let getWeatherData={
-    'weathers':weathers,
-    'voffers':offers
+  let getWeatherData = {
+    'weathers': weathers,
+    'voffers': offers
   }
   return getWeatherData;
 }
 
 /*function getWeatherData2() {
   "weather": [/*tömb *//*
-    {
-      "dayNumber": 0,
-      "temp": -11, 2 *//*Objektum*//*
-    },
-    ...
-  ]
-  "offers": [/* tömb*//*
-    {
-      "upperLimit": 0,
-      "offerMessage": "Forró Csoki"
-    },
-    ...
-  ]
+{
+  "dayNumber": 0,
+  "temp": -11, 2 *//*Objektum*//*
+},
+...
+]
+"offers": [/* tömb*//*
+  {
+    "upperLimit": 0,
+    "offerMessage": "Forró Csoki"
+  },
+  ...
+]
 }*/
