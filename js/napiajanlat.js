@@ -19,9 +19,9 @@ function weatherWidget() {
 }
 
 function showWeather(day) { /*Adott naphoz tartozó értéket megkeresi */
-  for (let weather of data['dayNumber']) {/*Az értékekekn megy végig */
-    if (weather.dayNumber == hetNapja) {
-      return weather
+  for (const days of data.weathers.dayNumber) {
+    if (day == data.weathers.temp[days]) {
+      return data.weathers.temp[days]
     }
   }
 }
