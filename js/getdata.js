@@ -1,35 +1,42 @@
 function getWeatherData() {
-  let weathers =/* (0) nap sorsámát és hőmérséklet, Objektum, napsorszáma ne biztos, hogy sorrendben vannak*/
-  {
-    "dayNumber": [0, 1, 2, 3, 4, 5, 6],
-    "temp": [5.4, 15.9, 25.5, 33, 14.7, -0.1, 20.6]
-  };
+  let week_temp = [{
+    dayNumb: 0,
+    temp: -2
+  }, {
+    dayNumb: 1,
+    temp: 5
+  }, {
+    dayNumb: 2,
+    temp: 17.8
+  }, {
+    dayNumb: 3,
+    temp: 21
+  }, {
+    dayNumb: 4,
+    temp: 14.7
+  }, {
+    dayNumb: 5,
+    temp: 25
+  }, {
+    dayNumb: 6,
+    temp: 26
+  }];
 
-  const offers =/* (1) Ajánlat, felső limitet tartalmazza OBJEKTUM*/
-  {
-    "upperLimit": [0, 15, 20, 25],
-    'offerMessage': ['Forró Csoki', 'Meleg Tea', 'Fagyi', 'Jéghideg Limonadé']
-  };
-  let getWeatherData = {
-    'weathers': weathers,
-    'voffers': offers
+  const napi_ajanl = [{
+    daylimit: 0,
+    offer: 'Forró csoki'
+  }, {
+    daylimit: 15,
+    offer: 'Meleg Tea'
+  }, {
+    daylimit: 20,
+    offer: 'Fagyi'
+  }, {
+    daylimit: 25,
+    offer: 'Jéghideg Limonadé'
+  },];
+  return {
+    'week_temp': week_temp,
+    'napi_ajanl': napi_ajanl
   }
-  return getWeatherData;
 }
-
-/*function getWeatherData2() {
-  "weather": [/*tömb *//*
-{
-  "dayNumber": 0,
-  "temp": -11, 2 *//*Objektum*//*
-},
-...
-]
-"offers": [/* tömb*//*
-  {
-    "upperLimit": 0,
-    "offerMessage": "Forró Csoki"
-  },
-  ...
-]
-}*/
