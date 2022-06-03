@@ -36,8 +36,11 @@ function napi_ajanlFt(akt_temps) {
   var showAjalnlat = document.querySelector('span#Ajanlat')
   var max = ' - '
   for (let a = 0; a < Object.keys(data.napi_ajanl).length; a++) {
+    console.log('Összehasonlítás: '+akt_temps+'<='+data.napi_ajanl[a]['daylimit'])
     if (akt_temps <= data.napi_ajanl[a]['daylimit']) {
       max = data.napi_ajanl[a]['offer']
+      console.log('Igaz az összehasonlítás!')
+      break;
     }
   }
   showAjalnlat.innerHTML = 'Ajánlat: ' + max

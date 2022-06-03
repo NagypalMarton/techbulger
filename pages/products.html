@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Termékek</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+
 <body>
     <h1>Termékek</h1>
     <ul id="menu">
@@ -29,8 +31,14 @@
             <option value="6">Vasárnap</option>
         </select>
         <button onclick="weatherWidget()">Ajánlat Megtekintése</button>
-        <span id='Ajanlat' class="soros">Napi Ajánlat</span>
-        <span id='Homer' class="soros"></span>
+        <span id='Ajanlat' class="soros">Ajánlat</span>
+        <span id='Homer' class="soros">Hő</span>
+        <span class="soros WW">
+            <small id="a">Heti Átlag</small>
+            <small id="b">Heti Min</small>
+            <small id="c">Het Max</small>
+        </span>
+        <script src="/js/getdata.js"></script>
         <script src="/js/napiajanlat.js"></script>
     </div>
 
@@ -38,7 +46,8 @@
     <table class="contant">
         <caption>Előre elkészített konfigurációk</caption>
         <thead>
-            <tr class="fejlec"><!--Sor-->
+            <tr class="fejlec">
+                <!--Sor-->
                 <th>Név</th>
                 <th>Ártartomámy</th>
                 <th>Kinek ajánljuk?</th>
@@ -50,7 +59,12 @@
                 <td><a href="#GamerPC">Gamer PC</a></td>
                 <td>1500 - 4500$</td>
                 <td>Igazi Gamerekeknek, akik csak játszani akarnak!</td>
-                <td> <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiP2ZDLqOr3AhXONuwKHUl5Dr4QFnoECAkQAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGaming_computer&usg=AOvVaw3FXrBp18vv1gD8EpTtW4Uz" target="_blank"><img src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29" alt="Gamer PC"> <!--Kép beillesztése külső linkről--></a></td>
+                <td> <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiP2ZDLqOr3AhXONuwKHUl5Dr4QFnoECAkQAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGaming_computer&usg=AOvVaw3FXrBp18vv1gD8EpTtW4Uz"
+                        target="_blank"><img
+                            src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_81723963/mobile_786_587_png/X-X-Gamer-i3310-gamer-PC-%28Core-i7-32GB-1024-GB-SSD-RTX3070S-8GB-NoOS%29"
+                            alt="Gamer PC">
+                        <!--Kép beillesztése külső linkről-->
+                    </a></td>
             </tr>
             <tr class="sorparo">
                 <td><a href="#HomePC">Otthoni Számítógépek</a></td>
@@ -87,8 +101,10 @@
                 <td id="GamerPC">Gamer PC</td>
                 <td>Console Lover Player</td>
                 <td>
-                    <ul><!--Rendezetlen Lista-->
-                        <li>Intel® Core™ i7-10700F processzor 2.90 GHz</li><!--Listaelem-->
+                    <ul>
+                        <!--Rendezetlen Lista-->
+                        <li>Intel® Core™ i7-10700F processzor 2.90 GHz</li>
+                        <!--Listaelem-->
                         <li>DDR4-es 32GB 3200 MHz</li>
                         <li>NVIDIA GeForce RTX 3070 Super</li>
                         <li>SSD , 1 TB , M.2 via PCIe</li>
@@ -164,7 +180,8 @@
         </tbody>
     </table>
     <h3>Bővítési opciók</h3>
-    <ol class="contant"><!--Rendezett Lista-->
+    <ol class="contant">
+        <!--Rendezett Lista-->
         <li>Videókártya csere</li>
         <li>Memória bővítés</li>
         <li>Alaplap csere</li>
@@ -174,4 +191,5 @@
         <li>Rendeléskor a megjegyzésben megírom</li>
     </ol>
 </body>
+
 </html>

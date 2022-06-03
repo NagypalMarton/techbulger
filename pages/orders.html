@@ -19,7 +19,6 @@
         <li class="menu"><a href="/pages/contact.html">Rólunk</a></li>
         <li class="menu"><a href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
     </ul>
-    <h2>Rendelés</h2>
     <div class="contant soros">
         <select name="HetNap" id="HetNap">
             <option value="0">Hétfő</option>
@@ -31,10 +30,17 @@
             <option value="6">Vasárnap</option>
         </select>
         <button onclick="weatherWidget()">Ajánlat Megtekintése</button>
-        <span id='Ajanlat' class="soros">Napi Ajánlat</span>
-        <span id='Homer' class="soros"></span>
+        <span id='Ajanlat' class="soros">Ajánlat</span>
+        <span id='Homer' class="soros">Hő</span>
+        <span class="soros WW">
+            <small id="a">Heti Átlag</small>
+            <small id="b">Heti Min</small>
+            <small id="c">Het Max</small>
+        </span>
+        <script src="/js/getdata.js"></script>
         <script src="/js/napiajanlat.js"></script>
     </div>
+    <h2>Rendelés</h2>
     <fieldset>
         <legend>Hogy zajlik a rendelés nálunk?</legend>
         <ol>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Akcióink</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+
 <body>
     <h1>Akcióink</h1>
     <ul id="menu">
@@ -28,22 +30,33 @@
             <option value="6">Vasárnap</option>
         </select>
         <button onclick="weatherWidget()">Ajánlat Megtekintése</button>
-        <span id='Ajanlat' class="soros">Napi Ajánlat</span>
-        <span id='Homer' class="soros"></span>
+        <span id='Ajanlat' class="soros">Ajánlat</span>
+        <span id='Homer' class="soros">Hő</span>
+        <span class="soros WW">
+            <small id="a">Heti Átlag</small>
+            <small id="b">Heti Min</small>
+            <small id="c">Het Max</small>
+        </span>
+        <script src="/js/getdata.js"></script>
         <script src="/js/napiajanlat.js"></script>
     </div>
     <p class="contant">
-        Az alábbbi oldalon a <strong>folyamatosan</strong> futó akcióink, kedvezményeink vannak megjelenítve. Jelenleg az alábbi kedvezményeink vannak érvényben, melyeket egymással nem lehet összevonni!
+        Az alábbbi oldalon a <strong>folyamatosan</strong> futó akcióink, kedvezményeink vannak megjelenítve. Jelenleg
+        az alábbi kedvezményeink vannak érvényben, melyeket egymással nem lehet összevonni!
     </p>
     <h2>Szabad kedvezmény</h2>
     <p class="contant">Minden nem hétköznapi nyitvatartásunkkor a végösszegből adunk 5%-os kedvezményt!</p>
     <h2>Diák/Hallgató kedvezmény</h2>
-    <p class="contant">Érvényes diákigaolvánnyal rendelkező 25 év alatti vevőnknek 25%-os kedvezményt kínálunk 5000$ vásárlás felett!</p>
+    <p class="contant">Érvényes diákigaolvánnyal rendelkező 25 év alatti vevőnknek 25%-os kedvezményt kínálunk 5000$
+        vásárlás felett!</p>
     <h2>Nyugdíjas akció</h2>
     <p class="contant">65 évet már betöltött vásárlónak ingyenes házhoz szállítást és ingyenes beüzemelést kínálunk!</p>
     <h2>Közalkalmazotti kedvezmény</h2>
-    <p class="contant">Érvényes közalkalmazotti kártyával rendelkezőnek 20%-os kedvezményt és ingyenes szaktanácsadást adunk!</p>
+    <p class="contant">Érvényes közalkalmazotti kártyával rendelkezőnek 20%-os kedvezményt és ingyenes szaktanácsadást
+        adunk!</p>
     <h2>Ingyenes házhoz szállítás</h2>
-    <p class="contant">Minden 5000$ vagy az feletti vásárlás esetén ingyenes házhoz szállítást biztosítunk minden vásárlónknak!</p>
+    <p class="contant">Minden 5000$ vagy az feletti vásárlás esetén ingyenes házhoz szállítást biztosítunk minden
+        vásárlónknak!</p>
 </body>
+
 </html>
