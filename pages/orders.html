@@ -93,7 +93,7 @@
         <div class="form-class">
             <label for="number">Mennyiség: </label>
             <input class="form-input" type="number" name="amount-input" value="1" required>
-            <small>
+            <small id='rend' class="form-text text-muted">
                 Minimum 1 és maximum 10 darab lehet!
             </small>
         </div>
@@ -158,7 +158,7 @@
     </fieldset>
     <fieldset>
         <legend>Személyes Adatok</legend>
-        <form action="" class="form-class">
+        <form action="" id="order-form" class="form-class">
             <div class="form-group">
                 <label for="nev">Név:</label>
                 <input id="neve" class="form-control blue" type="text" name="nev" id="nev" required>
@@ -231,7 +231,7 @@
         <button onclick="ordersTextChance()" class="submit-btn">Ellenőrzés</button>
     </div>
     <div class="form-group">
-        <button onclick="RendelesKuldese()" class="submit-btn">Rendelés elküldése</button>
+        <button onclick="RendelesKuldese()" type="submit" id="submit-btn" class="submit-btn">Rendelés elküldése</button>
     </div>
     <script src="/js/main.js"></script>
 </body>

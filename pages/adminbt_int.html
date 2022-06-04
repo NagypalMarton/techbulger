@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Saját Bootstrap Oldal</title>
+    <title>Adminisztratív Felület</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a7784e02ad.js" crossorigin="anonymous"></script>
@@ -66,7 +66,7 @@
             <div class="col">
                 <h1>Adminisztratív felület</h1>
                 <h2>Felhasználói Adatok</h2>
-                <div class="table-responsive">
+                <div id="tableForm" class="table-responsive">
                     <table class="table table-striped-columns">
                         <caption>A táblázat mobilra is optimalizálva van!</caption>
                         <thead class="table-dark">
@@ -89,6 +89,23 @@
                                 <td>
                                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group me-2" role="group" aria-label="First group">
+                                            <button type="submit_mod" class="btn btn-outline-warning btn-group-s"
+                                                role="group"><i class="fa-solid fa-pen-nib"></i> Edit</button>
+                                            <button type="submit_del" class="btn btn-outline-danger btn-group-sm"
+                                                role="group"><i class="fa-solid fa-dumpster-fire"></i> Del</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Mark ToTó</td>
+                                <td>+36/20-143-4569</td>
+                                <td>mark.totó@thisemail.jk</td>
+                                <td>9876 Mucsaröcsöge Trabéz Nadrág utca 14.</td>
+                                <td>
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group me-2" role="group" aria-label="First group">
                                             <button type="button" class="btn btn-outline-warning btn-group-s"
                                                 role="group"><i class="fa-solid fa-pen-nib"></i> Edit</button>
                                             <button type="button" class="btn btn-outline-danger btn-group-sm"
@@ -106,6 +123,8 @@
             </div>
         </div>
     </div>
+    
+    <script src="/js/adminbt_int.js"></script><!--Saját Scriptjeim-->
 </body>
 
 </html>

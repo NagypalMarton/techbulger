@@ -9,5 +9,4 @@ tömbökkel kezdünk => ide kerülnek az erején az adatok
 Váz elkészítése
 	dinamikus táblázat (js csinálja majd a bővítést)
 	sorok végére kell majd a 2 gomb
-
-/*DOM => Document Object Model, HTML dokumentumok dinamikus kezelése*/
+	Törlés esetén kérdezze meg, hogy tényleg törölje-e
