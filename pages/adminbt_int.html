@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saját Bootstrap Oldal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a7784e02ad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"> <i class="fa-solid fa-microchip"></i>TecBulger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Kezdőoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">inAktív Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Oldalaink Legördülő Menüben
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/pages/products.html">Termékek</a></li>
+                            <li><a class="dropdown-item" href="/pages/orders.html">Rendelés</a></li>
+                            <li><a class="dropdown-item" href="/pages/price.html">Áraink</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/pages/contact.html">Rólunk</a></li>
+                            <li><a class="dropdown-item" href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
+                            <li><a class="dropdown-item" href="/pages/adminbt_int.html">Admin TESZT Felület</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">inAktív</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Keresés az oldalon" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Keresés</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                Teszt Tartalom 1
+            </div>
+            <div class="col">
+                <h1>Adminisztratív felület</h1>
+                <h2>Felhasználói Adatok</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped-columns">
+                        <caption>A táblázat mobilra is optimalizálva van!</caption>
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Név</th>
+                                <th scope="col">Telefonszám</th>
+                                <th scope="col">Email Cím</th>
+                                <th scope="col">Cím</th>
+                                <th scope="col">Módosító Gombok</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark Otto</td>
+                                <td>+36/20-123-4567</td>
+                                <td>mark.otto@thisemail.jk</td>
+                                <td>9876 Mucsaröcsöge Trabéz Nadrág utca 12.</td>
+                                <td>
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group me-2" role="group" aria-label="First group">
+                                            <button type="button" class="btn btn-outline-warning btn-group-s"
+                                                role="group"><i class="fa-solid fa-pen-nib"></i> Edit</button>
+                                            <button type="button" class="btn btn-outline-danger btn-group-sm"
+                                                role="group"><i class="fa-solid fa-dumpster-fire"></i> Del</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-2">
+                Teszt Tartalom 2
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
