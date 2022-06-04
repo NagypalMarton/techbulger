@@ -19,19 +19,28 @@
         <li class="menu"><a href="/pages/contact.html">Rólunk</a></li>
         <li class="menu"><a href="/pages/bt.html">Saját Bootstrap Oldal</a></li>
     </ul>
-    <div class="contant soros">
-        <select name="HetNap" id="HetNap">
-            <option value="0">Hétfő</option>
-            <option value="1">Kedd</option>
-            <option value="2">Szerda</option>
-            <option value="3">Csütörtök</option>
-            <option value="4">Péntek</option>
-            <option value="5">Szombat</option>
-            <option value="6">Vasárnap</option>
-        </select>
-        <button onclick="weatherWidget()">Ajánlat Megtekintése</button>
+    <div class="soros">
+        <div id="elvalaszto">
+            <select name="HetNap" id="HetNap">
+                <option value="0">Hétfő</option>
+                <option value="1">Kedd</option>
+                <option value="2">Szerda</option>
+                <option value="3">Csütörtök</option>
+                <option value="4">Péntek</option>
+                <option value="5">Szombat</option>
+                <option value="6">Vasárnap</option>
+            </select>
+            <div id="Fok">
+                <input type="radio" name="Fok" id="Celsius" checked>
+                <label for="Celsius">Celsius</label>
+                <input type="radio" name="Fok" id="fahrenheit">
+                <label for="fahrenheit">Fahrenheit</label>
+              </div>
+            <button onclick="weatherWidget()">Ajánlat Megtekintése</button>
+        </div>
         <span id='Ajanlat' class="soros">Ajánlat</span>
         <span id='Homer' class="soros">Hő</span>
+        <br>
         <span class="soros WW">
             <small id="a">Heti Átlag</small>
             <small id="b">Heti Min</small>

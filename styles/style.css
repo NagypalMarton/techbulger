@@ -1,69 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;1,500&display=swap');
+
 @font-face {
     font-family: "Mulish";
     src: url(/styles/fonts/Mulish-VariableFont_wght.ttf);
     font-weight: 500;
 }
+
 @font-face {
     font-family: "Mulish-Light";
     src: url(/styles/fonts/Mulish-Italic-VariableFont_wght.ttf);
     font-weight: 300;
 }
-@font-face{
+
+@font-face {
     font-family: "Mulish-Bold";
     src: url(/styles/fonts/static/Mulish-Bold.ttf);
     font-weight: 700;
 }
-body{
+
+body {
     margin: 0%;
-    line-height: 25px;/*Sortávolság*/
+    line-height: 25px;
+    /*Sortávolság*/
     background-color: whitesmoke;
     padding: 2% 0%;
     min-width: auto;
 }
-iframe{
+
+iframe {
     margin-top: 3%;
     box-shadow: 0 0 20px gray;
     max-width: 90%;
 }
-html{
+
+html {
     font-family: 'Fira Sans', 'Mulish', Arial, Helvetica, sans-serif;
     background-color: darkorange;
     margin: 0% 5%;
     border: solid 8px yellow;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
     text-align: center;
     color: brown;
 }
-h2,h3{
+
+h2,
+h3 {
     color: green;
     border-bottom: solid 3px grey;
 }
-p{
+
+p {
     text-align: justify;
     font-family: 'Mulish';
     min-width: 25%;
     max-width: 75%;
 }
-ul,link{
+
+ul,
+link {
     font-family: 'Mulish-Bold';
     text-align: left;
-    text-transform: capitalize;/*Szókezdő betűket nagyá teszi*/
+    text-transform: capitalize;
+    /*Szókezdő betűket nagyá teszi*/
     color: rgb(48, 49, 49);
 }
-img{
+
+img {
     display: block;
     margin: 0% auto;
     max-width: 55%;
     min-width: 35%;
 }
-a{
+
+a {
     color: black;
     text-decoration: none;
 }
-.menu{ /*class selektor*/
-    margin:0% 2%;
+
+.menu {
+    /*class selektor*/
+    margin: 0% 2%;
     border: dashed 3px darkcyan;
     padding: 1.5%;
     background-color: lightsalmon;
@@ -71,116 +91,161 @@ a{
     display: inline;
     font-weight: bolder;
 }
-#menu{ /*ID selektor*/
+
+#menu {
+    /*ID selektor*/
     padding: 3.5% 0%;
-    background-color: brown ;
+    background-color: brown;
 }
 
-.contant{
+.contant {
     margin: 0% 5%;
 }
 
-.fejlec{
+.fejlec {
     background-color: yellowgreen;
     color: aliceblue;
     font-weight: bolder;
     text-align: center;
 }
-.fejlec,.sorparo{
+
+.fejlec,
+.sorparo {
     padding: 0%;
 }
-span{
+
+span {
     color: gray;
     margin-left: 10%;
     display: block;
     font-weight: bolder;
 }
-span[class="show-*"]{
+
+span[class="show-*"] {
     display: inline;
 }
-caption{
+
+caption {
     background-color: brown;
     color: white;
     font-weight: bolder;
 }
-a[href$=".html"]:focus{ /*Összes .html végzödésű linknél, amire rákattint a felhasználó */
+
+a[href$=".html"]:focus {
+    /*Összes .html végzödésű linknél, amire rákattint a felhasználó */
     color: whitesmoke;
 }
 
-ul li[class="menu"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
+ul li[class="menu"]:hover {
+    /*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
     box-shadow: 0 0 25px;
     background-color: yellow;
 }
 
-a[href*="#"]:hover{/*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
+a[href*="#"]:hover {
+    /*Ha fölé visszük az egeret és menu osztályú rendezetlen felsorolás*/
     background-color: brown;
     color: whitesmoke;
     font-weight: bolder;
 }
-img[src^="http"]:hover{/*Összes http kezdetű linknél, amire rákattint a felhasználó */
-    box-shadow: 0 0 30px ;
+
+img[src^="http"]:hover {
+    /*Összes http kezdetű linknél, amire rákattint a felhasználó */
+    box-shadow: 0 0 30px;
 }
-tr:nth-child(2n+0){/*táblázatoknál minden 2. sor legyen ilyen*/
+
+tr:nth-child(2n+0) {
+    /*táblázatoknál minden 2. sor legyen ilyen*/
     background-color: rgb(205, 205, 205);
 }
-ol li:first-child{
+
+ol li:first-child {
     color: orange;
     font-weight: bolder;
 }
-ol li:last-child{
+
+ol li:last-child {
     color: orangered;
     font-weight: bolder;
 }
-ul{
+
+ul {
     font-family: 'Mulish-Bold';
 }
-td{
+
+td {
     text-align: center;
 }
-table, tr,td{
+
+table,
+tr,
+td {
     border-collapse: collapse;
     border: none;
     margin-left: auto;
     margin-right: auto;
 }
-fieldset,button{
+
+fieldset,
+button {
     margin: 0% 3% 3%;
 }
-.submit-btn:hover{
+
+.submit-btn:hover {
     box-shadow: 0 0 30px darkorange;
     font-weight: bolder;
     color: brown;
 }
-.form-class input, .form-class textarea{
+
+.form-class input,
+.form-class textarea {
     display: block;
     border: solid 2px darkkhaki;
 }
-.form-class input:hover, .form-class textarea:hover{
-    box-shadow:  0 0 15px ;
+
+.form-class input:hover,
+.form-class textarea:hover {
+    box-shadow: 0 0 15px;
     border: solid 2px darkslategrey;
 }
-.form-class input:focus, .form-class textarea:focus{
+
+.form-class input:focus,
+.form-class textarea:focus {
     box-shadow: 0 0 15px;
     background-color: lemonchiffon;
     font-weight: bolder;
 }
-input[type="checkbox"]:active,input[type="radio"]:active{
+
+input[type="checkbox"]:active,
+input[type="radio"]:active {
     font-weight: bolder;
 }
-div[class*="soros"],span[class*="soros"]{
-    display: inline;
+
+div[class*="soros"] {
+    line-height: 150%;
     background-color: orangered;
     border: dashed 3px yellowgreen;
+    margin: auto;
+    max-width: 60%;
     padding: 2%;
+    box-shadow: 0 0 12px black;
+    text-align: center;
+}
+
+span[class*="soros"] {
+    display: inline;
     color: white;
+    margin-left: 1px;
+    text-shadow: 0 0 5px black;
 }
-span[class*="soros"]{
-    margin-left: 1%;
-    padding: 0%;
-    box-shadow: 0 0 0px;
-    border: none;
-}
-span[class*="WW"]{
-    margin: 0%;
+
+span[class*="WW"] {
     font-style: italic;
+}
+#elvalaszto{
+    border-bottom: solid 5px white;
+    margin-bottom: 4%;
+}
+div[id*="Fok"]{
+    display: inline-block;
 }

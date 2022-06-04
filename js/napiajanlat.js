@@ -7,16 +7,22 @@ function weatherWidget() {
   let hetNapja = document.querySelector('select[id="HetNap"]').value
   let showWeekTemp = document.querySelector('span#Homer')/*id-s szelektor */
   let akt_temp = showWeather(hetNapja) /*week_temp[hetNapja]*/
-  showWeekTemp.innerHTML = 'Hő: ' + akt_temp + ' &#8451;'
-  napi_ajanlFt(akt_temp)
-
   var showatlag = document.querySelector('small#a')
   var showmin = document.querySelector('small#b')
   var showmax = document.querySelector('small#c')
+  let checkDegree=document.querySelector('div[id="Fok"]')
+
+  showWeekTemp.innerHTML = 'Hő: ' + akt_temp + ' &#8451;'
+  napi_ajanlFt(akt_temp)
+
   showatlag.innerHTML = 'Heti átlag: ' + hetiatlag() + ' &#8451;'
   showmin.innerHTML = 'Heti Min: ' + hetimin() + ' &#8451;'
   showmax.innerHTML = 'Heti Max: ' + hetimax() + ' &#8451;'
   alert('Ajánlatunk csak a Mucsaröcsögei Cukrászda és KészMűves Fagyizó KFT. BTK-nál érvényesíthető!')
+}
+
+function changeDegree(params) {
+  /*Degree*(degree*9/5)+32 */
 }
 
 /*Adott naphoz tartozó értéket megkeresi, mivel nem biztos, hogy sorrendben vannak */
