@@ -2,6 +2,8 @@
 const week_temp_high = [0, 15, 20, 25]
 const napi_ajanl = ['Forró Csoki', 'Meleg Tea', 'Fagyi', 'Jéghideg Limonadé']*/
 var data = getWeatherData()
+var inputCheck=document.querySelector('#Celsius')
+let fok=' &#8451;'
 
 function weatherWidget() {
   let hetNapja = document.querySelector('select[id="HetNap"]').value
@@ -10,19 +12,24 @@ function weatherWidget() {
   var showatlag = document.querySelector('small#a')
   var showmin = document.querySelector('small#b')
   var showmax = document.querySelector('small#c')
-  let checkDegree=document.querySelector('div[id="Fok"]')
 
-  showWeekTemp.innerHTML = 'Hő: ' + akt_temp + ' &#8451;'
+  showWeekTemp.innerHTML = 'Hő: ' +changeDegree(akt_temp)
   napi_ajanlFt(akt_temp)
 
-  showatlag.innerHTML = 'Heti átlag: ' + hetiatlag() + ' &#8451;'
-  showmin.innerHTML = 'Heti Min: ' + hetimin() + ' &#8451;'
-  showmax.innerHTML = 'Heti Max: ' + hetimax() + ' &#8451;'
+  showatlag.innerHTML = 'Heti átlag: ' + changeDegree(hetiatlag())
+  showmin.innerHTML = 'Heti Min: ' + changeDegree(hetimin())
+  showmax.innerHTML = 'Heti Max: ' + changeDegree(hetimax())
   alert('Ajánlatunk csak a Mucsaröcsögei Cukrászda és KészMűves Fagyizó KFT. BTK-nál érvényesíthető!')
 }
 
-function changeDegree(params) {
-  /*Degree*(degree*9/5)+32 */
+function changeDegree(hofok) {/* Átváltó => °C-ról °F-ra váltja */
+  if (inputCheck.checked==false) {
+    this.fok=' \xB0F'
+    this.akt_temp=hofok*(hofok*9/5)+32 /*Degree*(degree*9/5)+32 */
+    return [this.akt_temp.toFixed(2), this.fok]
+  }else{
+    return [hofok,fok]
+  }
 }
 
 /*Adott naphoz tartozó értéket megkeresi, mivel nem biztos, hogy sorrendben vannak */
@@ -42,10 +49,8 @@ function napi_ajanlFt(akt_temps) {
   var showAjalnlat = document.querySelector('span#Ajanlat')
   var max = ' - '
   for (let a = 0; a < Object.keys(data.napi_ajanl).length; a++) {
-    console.log('Összehasonlítás: '+akt_temps+'<='+data.napi_ajanl[a]['daylimit'])
     if (akt_temps <= data.napi_ajanl[a]['daylimit']) {
       max = data.napi_ajanl[a]['offer']
-      console.log('Igaz az összehasonlítás!')
       break;
     }
   }
