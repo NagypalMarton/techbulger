@@ -70,3 +70,16 @@ table_row.addEventListener(".submit_ment", function (ev) {/*íGY MÁR el is kül
     }
     console.log(values);
 });
+
+/*Az adott fölé helyezett kurzor esetén változzon a line értéke */
+const rowModButton = document.querySelectorAll("")
+function LineValueChange(content) {
+    /*function fillPre(content) {
+        document.querySelector('pre').innerHTML = content;
+    }
+    let button = document.querySelector('.click-button');
+    button.addEventListener('click', function (event) {
+        var className = this.className;
+        fillPre('clicked: ' + className);
+    });*//*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
+}
