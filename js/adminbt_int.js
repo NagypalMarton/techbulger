@@ -18,7 +18,6 @@ for (let i = 0; i < mytr.length; i++) {
 
 function choiceLine(line) {/*Aktuális sor sorszámát választja ki */
     let sorScope = document.querySelector('th[scope="row"]').firstChild.nodeValue
-    alert(sorScope+'Nincs visszatérési érték!')
     return sorScope
 }
 
@@ -33,6 +32,7 @@ function btn_modi() {
         myNodeList[i].appendChild(addInput.cloneNode(true))
     }
     btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('class', 'btn btn-success btn-group-s')/*Vajon lehet olyat, ami csak részlegesen cseréli? */
+    btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('onclick', 'btn_mentes()')
     btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('type', 'submit_ment')
 }
 function btn_dele() {
@@ -40,21 +40,28 @@ function btn_dele() {
     const element = document.querySelector(`#C${line}`)
     if (confirm("Biztos törölni akarod a rekordod?")) {
         element.remove()
-        alert('Törlésre került!')
-    } else {
-        console.log('Siker!')
+        alert('A kért elem törlésre került!')
     }
 }
 
-var btn_mentes=document.querySelector('button[type="submit_ment"]');
-btn_mentes.onclick=function(params) {
+function btn_mentes() {
     alert('Mentés')
+    line = choiceLine(line)
+    let myNodeList = document.querySelectorAll(`.td_sor${line}`)
+    for (let i = 0; i < myNodeList.length; i++) {
+        myNodeList[i].removeChild(myNodeList[i].firstElementChild);
+    }
+
+    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('onclick', 'btn_modi()')
+    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('class', 'btn btn-outline-warning btn-group-s')
+    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('type', 'submit_mod')
+
 }
 
-let table_row = document.querySelector(".table_row")
-table_row.addEventListener("submit_ment", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
+let table_row = document.querySelector(`#C${line}`)
+table_row.addEventListener(".submit_ment", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
     ev.preventDefault();
-    /*console.log(this);*/
+    alert('addEventListener')
 
     let inputs = this.querySelectorAll("input");
     let values = {}
