@@ -18,6 +18,7 @@ for (let i = 0; i < mytr.length; i++) {
 
 function choiceLine(line) {/*Aktuális sor sorszámát választja ki */
     let sorScope = document.querySelector('th[scope="row"]').firstChild.nodeValue
+    alert(sorScope)
     return sorScope
 }
 
@@ -58,8 +59,8 @@ function btn_mentes() {
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('type', 'submit_mod')
 }
 
-let table_row = document.querySelector(`#C${line}`)
-table_row.addEventListener("change", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
+let table_row = document.querySelector(`.td_sor${line}`)
+table_row.addEventListener("click", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
   ev.preventDefault();
     alert('addEventListener')
 
@@ -73,14 +74,26 @@ table_row.addEventListener("change", function (ev) {/*íGY MÁR el is küldhetn�
 });
 
 /*Az adott fölé helyezett kurzor esetén változzon a line értéke */
-let buttonGrMoOv = document.querySelector("div[class*='btn-group']").onmouseover = function () { mouseOver() }
-let buttonGrMoOu = document.querySelector("div[class*='btn-group']").onmouseout = function () { mouseOut() }
+/*let buttonGrMoOv = document.querySelector("div[class*='btn-group']").onmouseover = function () { mouseOver() }
+let buttonGrMoOu = document.querySelector("div[class*='btn-group']").onmouseout = function () { mouseOut() }*/
 /*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
 
-function mouseOver() {
+/*function mouseOver() {
     document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 12px black"
 }
 function mouseOut() {
     document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
-}
+}*/
 
+let buttonGrMoOv = document.querySelectorAll("div[class*='btn-group']")
+let buttonGrMoOvs = document.querySelectorAll("div[class*='btn-group']")
+
+buttonGrMoOvs.forEach(function(buttonGrMoOv) {
+  buttonGrMoOv.addEventListener('mouseover', function hover() {
+    document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 12px black"
+  });
+
+  buttonGrMoOv.addEventListener('mouseleave', function leave() {
+    document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
+  });
+});
