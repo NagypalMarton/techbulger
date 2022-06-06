@@ -64,7 +64,37 @@
                 Teszt Tartalom 1
             </div>
             <div class="col">
-                <h1>Adminisztratív felület</h1>
+                <h1>Adminisztratív felület</h1><br>
+                <h2>Új felhasználó felvétele</h2>
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputNev" class="col-sm-2 col-form-label">Név</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNev" placeholder="John Doe">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputTel" class="col-sm-2 col-form-label">Telefonszám</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputTel" placeholder="+36/12-345-6789">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="minta@email.com">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputAddress" class="col-sm-2 col-form-label">Cím</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Mucsaröcsöge Kis Mihály utca 101">
+                        </div>
+                    </div>
+                    <small>A kliens oldali ellenőrzés is van a Bootstrap oldalán!</small><br>
+                    <button type="submit" class="btn btn-primary">Adatok felvitele</button>
+                </form>
+                <br>
                 <h2>Felhasználói Adatok</h2>
                 <div id="tableForm" class="table-responsive">
                     <table class="table table-striped-columns">
@@ -89,10 +119,12 @@
                                 <td>
                                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group me-2" role="group" aria-label="First group">
-                                            <button onclick='btn_modi()' type="submit_mod" class="btn btn-outline-warning btn-group-s"
-                                                role="group"><i class="fa-solid fa-pen-nib"></i> Edit</button>
-                                            <button onclick='btn_dele()' type="submit_del" class="btn btn-outline-danger btn-group-sm"
-                                                role="group"><i class="fa-solid fa-dumpster-fire"></i> Del</button>
+                                            <button onclick='btn_modi()' type="submit_mod"
+                                                class="btn btn-outline-warning btn-group-s" role="group"><i
+                                                    class="fa-solid fa-pen-nib"></i> Edit</button>
+                                            <button onclick='btn_dele()' type="submit_del"
+                                                class="btn btn-outline-danger btn-group-sm" role="group"><i
+                                                    class="fa-solid fa-dumpster-fire"></i> Del</button>
                                         </div>
                                     </div>
                                 </td>
@@ -106,10 +138,12 @@
                                 <td>
                                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group me-2" role="group" aria-label="First group">
-                                            <button onclick='btn_modi()' type="submit_mod" class="btn btn-outline-warning btn-group-s"
-                                                role="group"><i class="fa-solid fa-pen-nib"></i> Edit</button>
-                                            <button onclick='btn_dele()' type="submit_del" class="btn btn-outline-danger btn-group-sm"
-                                                role="group"><i class="fa-solid fa-dumpster-fire"></i> Del</button>
+                                            <button onclick='btn_modi()' type="submit_mod"
+                                                class="btn btn-outline-warning btn-group-s" role="group"><i
+                                                    class="fa-solid fa-pen-nib"></i> Edit</button>
+                                            <button onclick='btn_dele()' type="submit_del"
+                                                class="btn btn-outline-danger btn-group-sm" role="group"><i
+                                                    class="fa-solid fa-dumpster-fire"></i> Del</button>
                                         </div>
                                     </div>
                                 </td>
