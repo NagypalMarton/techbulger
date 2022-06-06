@@ -53,34 +53,34 @@ function btn_mentes() {
         myNodeList[i].removeChild(myNodeList[i].firstElementChild);
     }
 
-    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('onclick', 'btn_modi()')
+   btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('onclick', 'btn_modi()')
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('class', 'btn btn-outline-warning btn-group-s')
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('type', 'submit_mod')
-
 }
 
 let table_row = document.querySelector(`#C${line}`)
-table_row.addEventListener(".submit_ment", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
-    ev.preventDefault();
+table_row.addEventListener("change", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
+  ev.preventDefault();
     alert('addEventListener')
 
     let inputs = this.querySelectorAll("input");
     let values = {}
     for (let i = 0; i < inputs.length; i++) {
         values[inputs[i].name] = inputs.value
+        console.log(inputs.value)
     }
     console.log(values);
 });
 
 /*Az adott fölé helyezett kurzor esetén változzon a line értéke */
-var buttonGrMoOv = document.querySelectorAll("div[class*='btn-group']").onmouseover = function () { mouseOver() }
-var buttonGrMoOu = document.querySelectorAll("div[class*='btn-group']").onmouseout = function () { mouseOut() }
+let buttonGrMoOv = document.querySelector("div[class*='btn-group']").onmouseover = function () { mouseOver() }
+let buttonGrMoOu = document.querySelector("div[class*='btn-group']").onmouseout = function () { mouseOut() }
 /*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
 
 function mouseOver() {
     document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 12px black"
-
 }
 function mouseOut() {
     document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
 }
+
