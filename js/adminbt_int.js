@@ -1,5 +1,16 @@
 let users = [
     {
+        name: "Mark Otto",
+        phone: "+36/20-123-4567",
+        email: "mark.otto@thisemail.jk",
+        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 12.'
+    }, {
+        name: "Mark Toto",
+        phone: "+36/20-123-4589",
+        email: "mark.toto@thisemail.jk",
+        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 14.'
+    },
+    {
         name: "Kiss Tibbi",
         phone: "+36/90-965-9878",
         email: "kiss.tibi@gags.ju",
@@ -20,7 +31,8 @@ let users = [
 ]
 
 let tableBody = document.querySelector("#tableForm tbody");
-let createID = (html, parent) => {
+
+let createTD = (html, parent) => {
     let td = document.createElement("td")
     td.innerHTML = html
     parent.appendChild(td)
@@ -29,27 +41,27 @@ let createID = (html, parent) => {
 let createButtonGroup = parent => {
     let toolbar = document.createElement("div")
     toolbar.className = 'btn-toolbar'
-    toolbar.setAttribute('role','toolbar')
-    toolbar.setAttribute('aria-label','Toolbar with button groups')
+    toolbar.setAttribute('role', 'toolbar')
+    toolbar.setAttribute('aria-label', 'Toolbar with button groups')
 
     var group = document.createElement("div")
     group.className = "btn-group me-2";
-    group.setAttribute('role','group');
-    group.setAttribute('aria-label','First group')
+    group.setAttribute('role', 'group');
+    group.setAttribute('aria-label', 'First group')
 
     var btnEdit = document.createElement("button");
     btnEdit.className = "btn btn-outline-warning btn-group-s";
     btnEdit.innerHTML = "<i class='fa-solid fa-pen-nib'></i> Edit";
-    btnEdit.setAttribute("onclick","btn_modi()")
-    btnEdit.setAttribute("type","submit_mod")
-    btnEdit.setAttribute('role','group')
+    btnEdit.setAttribute("onclick", "btn_modi()")
+    btnEdit.setAttribute("type", "submit_mod")
+    btnEdit.setAttribute('role', 'group')
 
     let btnDel = document.createElement("button");
     btnDel.className = "btn btn-outline-danger btn-group-sm";
     btnDel.innerHTML = '<i class="fa-solid fa-dumpster-fire"></i> Del';
-    btnEdit.setAttribute("onclick","btn_dele()")
-    btnEdit.setAttribute("type","submit_del")
-    btnEdit.setAttribute('role','group')
+    btnEdit.setAttribute("onclick", "btn_dele()")
+    btnEdit.setAttribute("type", "submit_del")
+    btnEdit.setAttribute('role', 'group')
 
     group.appendChild(btnEdit)
     group.appendChild(btnDel)
@@ -62,9 +74,16 @@ let createButtonGroup = parent => {
 
 for (const k in users) {
     let tr = document.createElement("tr")
-    createID(parseInt(k) + 1, tr)
+    tr.setAttribute("class","table_row")
+
+    /*ID hozzáadása*/
+    let th=document.createElement("th")
+    th.setAttribute("scope","row")
+    th.innerHTML=parseInt(k)+1
+    tr.appendChild(th)
+
     for (const value of Object.values(users[k])) {
-        createID(value, tr)
+        createTD(value, tr)
     }
     createButtonGroup(tr);
     tableBody.appendChild(tr)
@@ -130,6 +149,10 @@ function btn_mentes() {
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('onclick', 'btn_modi()')
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('class', 'btn btn-outline-warning btn-group-s')
     btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('type', 'submit_mod')
+}
+
+function sendButton() {
+    alert('Jelenleg még nem lehet adatot felvinni a táblázatba!')
 }
 
 let table_row = document.querySelector(`.td_sor${line}`)
