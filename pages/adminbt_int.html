@@ -66,6 +66,10 @@
             <div class="col">
                 <h1>Adminisztratív felület</h1><br>
                 <h2>Új felhasználó felvétele</h2>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Kedves felhasználó!</strong>Ellenőrizd az alábbi táblát!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 <form>
                     <div class="row mb-3">
                         <label for="inputNev" class="col-sm-2 col-form-label">Név</label>
@@ -84,6 +88,10 @@
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="inputEmail3" placeholder="minta@email.com">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="szallitasi">Feltét</label>
+                        <select class="form-control" name="szallitasi" id="szallitasi"></select>
                     </div>
                     <div class="row mb-3">
                         <label for="inputAddress" class="col-sm-2 col-form-label">Cím</label>
