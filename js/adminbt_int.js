@@ -38,6 +38,7 @@ function btn_modi() {
 function btn_dele() {
     line = choiceLine(line)
     const element = document.querySelector(`#C${line}`)
+    alert(line)
     if (confirm("Biztos törölni akarod a rekordod?")) {
         element.remove()
         alert('A kért elem törlésre került!')
@@ -72,14 +73,14 @@ table_row.addEventListener(".submit_ment", function (ev) {/*íGY MÁR el is kül
 });
 
 /*Az adott fölé helyezett kurzor esetén változzon a line értéke */
-const rowModButton = document.querySelectorAll("")
-function LineValueChange(content) {
-    /*function fillPre(content) {
-        document.querySelector('pre').innerHTML = content;
-    }
-    let button = document.querySelector('.click-button');
-    button.addEventListener('click', function (event) {
-        var className = this.className;
-        fillPre('clicked: ' + className);
-    });*//*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
+var buttonGrMoOv = document.querySelectorAll("div[class*='btn-group']").onmouseover = function () { mouseOver() }
+var buttonGrMoOu = document.querySelectorAll("div[class*='btn-group']").onmouseout = function () { mouseOut() }
+/*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
+
+function mouseOver() {
+    document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 12px black"
+
+}
+function mouseOut() {
+    document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
 }
