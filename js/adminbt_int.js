@@ -73,8 +73,11 @@ table_row.addEventListener(".submit_ment", function (ev) {/*íGY MÁR el is kül
 
 /*Az adott fölé helyezett kurzor esetén változzon a line értéke */
 const rowModButton = document.querySelectorAll("")
-function LineValueChange(content) {
-    /*function fillPre(content) {
+rowModButton.addEventListener("", function (ev) {
+    ev.preventDefault()
+});
+/*function LineValueChange(content) {
+    function fillPre(content) {
         document.querySelector('pre').innerHTML = content;
     }
     let button = document.querySelector('.click-button');
