@@ -19,56 +19,46 @@ let users = [
     },
 ]
 
-{/*
-<td>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2" role="group" aria-label="First group">
-            <button onclick='btn_modi()' type="submit_mod"
-                class="btn btn-outline-warning btn-group-s" role="group"><i
-                    class="fa-solid fa-pen-nib"></i> Edit</button>
-            <button onclick='btn_dele()' type="submit_del"
-                class="btn btn-outline-danger btn-group-sm" role="group"><i
-                    class="fa-solid fa-dumpster-fire"></i> Del</button>
-        </div>
-    </div>
-</td> */}
-
 let tableBody = document.querySelector("#tableForm tbody");
 let createID = (html, parent) => {
     let td = document.createElement("td")
     td.innerHTML = html
     parent.appendChild(td)
-}
+};
 
 let createButtonGroup = parent => {
     let toolbar = document.createElement("div")
     toolbar.className = 'btn-toolbar'
+    toolbar.setAttribute('role','toolbar')
+    toolbar.setAttribute('aria-label','Toolbar with button groups')
 
-    let group = document.createElement("div")
+    var group = document.createElement("div")
     group.className = "btn-group me-2";
+    group.setAttribute('role','group');
+    group.setAttribute('aria-label','First group')
 
-    let btnEdit = document.createElement("button");
-    btnEdit.className = "btn btn-outline-warning btn-group-s"
-    btnEdit.innerHTML = "<i class='fa-solid fa-pen-nib'></i> Edit"
+    var btnEdit = document.createElement("button");
+    btnEdit.className = "btn btn-outline-warning btn-group-s";
+    btnEdit.innerHTML = "<i class='fa-solid fa-pen-nib'></i> Edit";
+    btnEdit.setAttribute("onclick","btn_modi()")
+    btnEdit.setAttribute("type","submit_mod")
+    btnEdit.setAttribute('role','group')
 
-    let btnDel = document.createElement("button")
-    btnDel.className = "btn btn-outline-danger btn-group-sm"
-    btnDel.innerHTML = '<i class="fa-solid fa-dumpster-fire"></i> Del'
+    let btnDel = document.createElement("button");
+    btnDel.className = "btn btn-outline-danger btn-group-sm";
+    btnDel.innerHTML = '<i class="fa-solid fa-dumpster-fire"></i> Del';
+    btnEdit.setAttribute("onclick","btn_dele()")
+    btnEdit.setAttribute("type","submit_del")
+    btnEdit.setAttribute('role','group')
 
     group.appendChild(btnEdit)
     group.appendChild(btnDel)
     toolbar.appendChild(group)
 
     let td = document.createElement("td")
-    td.appendChild = (toolbar)/*group */
+    td.appendChild(toolbar)
     parent.appendChild(td)
-
-    document.querySelector('div[class="btn-toolbar"]').setAttribute('role','toolbar')/* Mit, Mire */
-    document.querySelector('div[class="btn-toolbar"]').setAttribute('aria-label','Toolbar with button groups')/* Mit, Mire */
-
-    document.querySelector('div[class*="btn-group me-2"]').setAttribute('role','group')/* Mit, Mire */
-    document.querySelector('div[class*="btn-group me-2"]').setAttribute('aria-label','First group')/* Mit, Mire */
-}
+};
 
 for (const k in users) {
     let tr = document.createElement("tr")
