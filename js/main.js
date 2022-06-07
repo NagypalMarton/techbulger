@@ -1,6 +1,5 @@
 /* Fv -> azokat a kódrészleteket, amelyeket gyakran használunk*/
 let amouantNumber = 0
-// let testPrice = 1200
 let sumProductPrice=0
 var sumProduct=1//Kiválasztott termék
 let deliveryAmount = 500
@@ -20,7 +19,14 @@ btnCh.addEventListener('click', (event) => {
         }
     }
     console.log('Vegosszeg: '+sumProductPrice+' Kiválasztott termekszama: '+amouantNumber*sumProduct)
+    /*Kelleni fog a táblázthoz =>  Kedv. neve és Szállítás módja*/
+    var selectedDiscount=document.querySelector('input[name="kedv"]:checked')/*Kedvezmény */
+
+    var selectedDelivery=document.querySelector('option:checked')
 })
+function selectedDelivery(sel) {
+    //https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
+}
 
 let products = [{
     name: "Console Lover Player",
@@ -62,7 +68,7 @@ function ordersTextChance() {/*Eljárás => Nem ad vissza semmilyen adatot */
 
     CheckValues(amountInput) /*Invokáció => fv hívása*/
 
-    //kezded
+    //kezd
     let selectedPordNod = document.querySelectorAll("input[type='checkbox']:checked")/*Összes bepipált termék*/
     sumProduct=selectedPordNod.length
     var selectedPord = []

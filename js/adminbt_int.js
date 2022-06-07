@@ -169,23 +169,6 @@ table_row.addEventListener("click", function (ev) {/*íGY MÁR el is küldhetné
     console.log(values);
 });
 
-<<<<<<< HEAD
-/*Az adott fölé helyezett kurzor esetén változzon a line értéke */
-const rowModButton = document.querySelectorAll("")
-rowModButton.addEventListener("", function (ev) {
-    ev.preventDefault()
-});
-/*function LineValueChange(content) {
-    function fillPre(content) {
-        document.querySelector('pre').innerHTML = content;
-    }
-    let button = document.querySelector('.click-button');
-    button.addEventListener('click', function (event) {
-        var className = this.className;
-        fillPre('clicked: ' + className);
-    });*//*onmouseover: az elem fölé viszik az egérmutatót (mobilon értelmetlen) */
-}
-=======
 let buttonGrMoOv = document.querySelectorAll("div[class*='btn-group']")
 let buttonGrMoOvs = document.querySelectorAll("div[class*='btn-group']")
 
@@ -198,4 +181,3 @@ buttonGrMoOvs.forEach(function (buttonGrMoOv) {
         document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
     });
 });
->>>>>>> 5bdefac5d1b4b57defb3159f9b9e7cb83529b163
