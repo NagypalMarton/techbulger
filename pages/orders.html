@@ -91,7 +91,7 @@
     <fieldset>
         <legend>Mennyit szeretnél belőlük rendelni?</legend>
         <div class="form-class">
-            <label for="number">Mennyiség: </label>
+            <label id='Mennyiseg' for="number">Mennyiség: </label>
             <input class="form-input" type="number" name="amount-input" value="1" required>
             <small id='rend' class="form-text text-muted">
                 Minimum 1 és maximum 10 darab lehet!
@@ -192,7 +192,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>Megrendelt mennyiség:</td>
+                <td>Megrendelt mennyiség: <br> <small>termékenként</small></td>
                 <td><span class="show-mennyiseg">0 db</span></td>
             </tr>
             <tr>

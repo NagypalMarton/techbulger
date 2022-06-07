@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Checkboxes</title>
+</head>
+
+<body>
+    <p>Select your favorite subject:</p>
+    <label for="s1"> <input type="checkbox" name="subject" value="Math" id="s1">Math</label>
+    <label for="s2"><input type="checkbox" name="subject" value="Science" id="s2">Science</label>
+    <label for="s3"><input type="checkbox" name="subject" value="Health" id="s3">Health</label>
+    <p>
+        <button id="bt">Get Selected subject</button>
+    </p>
+
+    <script>
+        const bt = document.querySelector('#bt');
+        bt.addEventListener('click', (event) => {
+            let checkboxes = document.querySelectorAll('input[name="subject"]:checked');
+            console.log(typeof checkboxes)
+            let output = [];
+            checkboxes.forEach((checkbox) => {
+                output.push(checkbox.value);
+            });
+            alert(output);
+            console.log(output)
+        });    
+    </script>
+</body>
+</html>
