@@ -1,31 +1,28 @@
 /* Fv -> azokat a kódrészleteket, amelyeket gyakran használunk*/
 let amouantNumber = 0
-let sumProductPrice=0
-var sumProduct=1//Kiválasztott termék
+let sumProductPrice = 0
+var sumProduct = 1//Kiválasztott termék
 let deliveryAmount = 500
 let btnCh = document.querySelector(".submit-btn")
 
 btnCh.addEventListener('click', (event) => {
     event.preventDefault();
     let selectedPordNod = document.querySelectorAll("input[type='checkbox']:checked")/*Összes bepipált termék*/
-    sumProduct=selectedPordNod.length
+    sumProduct = selectedPordNod.length
     var selectedPord = []
     for (let i = 0; i < selectedPordNod.length; i++) {
-        selectedPord[i]= selectedPordNod[i].nextElementSibling.firstChild.nodeValue;//TestvérElemének az értékéne
+        selectedPord[i] = selectedPordNod[i].nextElementSibling.firstChild.nodeValue;//TestvérElemének az értékéne
         for (let j = 0; j < products.length; j++) {
-            if (selectedPord[i]==products[j]["name"]) {
-                sumProductPrice+=parseInt(products[j]["price"])
+            if (selectedPord[i] == products[j]["name"]) {
+                sumProductPrice += parseInt(products[j]["price"])
             }
         }
     }
-    console.log('Vegosszeg: '+sumProductPrice+' Kiválasztott termekszama: '+amouantNumber*sumProduct)
-    /*Kelleni fog a táblázthoz =>  Kedv. neve és Szállítás módja*/
-    var selectedDiscount=document.querySelector('input[name="kedv"]:checked')/*Kedvezmény */
-
-    var selectedDelivery=document.querySelector('option:checked')
+    //console.log('Vegosszeg: ' + sumProductPrice + ' Kiválasztott termekszama: ' + amouantNumber * sumProduct)
 })
 function selectedDelivery(sel) {
-    //https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
+    var showDelivery = document.querySelector('.show-delivery-name')
+    showDelivery.innerHTML = sel.options[sel.selectedIndex].text
 }
 
 let products = [{
@@ -54,6 +51,37 @@ let products = [{
     type: "Irodai PC"
 }]
 
+let discountList = [{
+    name: "Szabad kedvezmény",
+    discount: 0.05
+}, {
+    name: "Diák/Hallgató kedvezmény",
+    discount: 0.25
+}, {
+    name: "Közalkalmazotti kedvezmény",
+    discount: 0.2
+}]
+
+function selectDiscountList() {
+    var discount = 0, weekday = ["Het", "Ked", "Szer", "Csüt", "Pen", "Szom", "Vas"]
+    const d = new Date();
+    var selectedDiscount = document.querySelector('input[name="kedv"]:checked').nextElementSibling.firstChild.nodeValue/*Kedvezmény neve*/
+    var kedvezmenyNeve=document.querySelector('.show-amount-kedvneve')
+    kedvezmenyNeve.innerHTML=selectedDiscount
+    for (let i = 0; i < discountList.length; i++) {
+        if (selectedDiscount == discountList[i]["name"]) {
+            if ("Szom" == weekday[d.getDay() - 1] || "Vas" == weekday[d.getDay() - 1]) { /*Hétvége */
+                discount = discountList[i]["discount"] + discountList[i]["discount"]
+                break
+            } else {/*Nincs hétvége */
+                discount = discountList[i]["discount"]
+                break
+            }
+        }
+    }
+    return discount
+}
+
 function calcAmount() {
     let testPrice = 1200
     let amountInput = document.querySelector("input[name='amount-input']"); /*Ezzel lehet kiválasztani, hogy melyik elemet */
@@ -70,27 +98,23 @@ function ordersTextChance() {/*Eljárás => Nem ad vissza semmilyen adatot */
 
     //kezd
     let selectedPordNod = document.querySelectorAll("input[type='checkbox']:checked")/*Összes bepipált termék*/
-    sumProduct=selectedPordNod.length
+    sumProduct = selectedPordNod.length
     var selectedPord = []
     for (let i = 0; i < sumProduct; i++) {
-        selectedPord[i]= selectedPordNod[i].nextElementSibling.firstChild.nodeValue;//TestvérElemének az értékéne
+        selectedPord[i] = selectedPordNod[i].nextElementSibling.firstChild.nodeValue;//TestvérElemének az értékéne
         for (let j = 0; j < products.length; j++) {
-            if (selectedPord[i]==products[j]["name"]) {
-                sumProductPrice+=parseInt(products[j]["price"])
+            if (selectedPord[i] == products[j]["name"]) {
+                sumProductPrice += parseInt(products[j]["price"])
             }
         }
     }
     //vég
 
-    let amouant1 = amouantNumber * sumProductPrice*sumProduct
+    let amouant1 = amouantNumber * sumProductPrice * sumProduct
     showAmount.innerHTML = amouant1 + " $"
-    showDarab.innerHTML =amouantNumber*sumProduct + " db"
+    showDarab.innerHTML = amouantNumber * sumProduct + " db"
 
-    let kedvInput = document.querySelector("input[type=radio]")
-    let showKedvNev = document.querySelector("span.show-amount-kedvneve")
-    showKedvNev.innerHTML = kedvInput.value
-
-    let kedvSzaz = 0.15
+    var kedvSzaz = selectDiscountList()
 
     let showKedv = document.querySelector('span.show-amount-kedverteke')
     showKedv.innerHTML = (kedvSzaz * 100).toPrecision(2) + "%, melynek értéke: " + (amouant1 * kedvSzaz).toFixed(0) + " $"
@@ -135,7 +159,7 @@ function showAmountEnds(amouant1, kedvSzaz) {
 
 function showDelivery(amountEnd) {
     let showDevAmount = document.querySelector("span.show-delivery-amount")
-    if (amountEnd >= 5000) {
+    if (amountEnd <= 50000) {
         amountEnd = amountEnd + deliveryAmount
         showDevAmount.innerHTML = deliveryAmount + " $"
     }

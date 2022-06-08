@@ -50,7 +50,7 @@
         <script src="/js/getdata.js"></script>
         <script src="/js/napiajanlat.js"></script>
     </div>
-    <h2>Rendelés</h2>
+    <h2>Rendelés leadása</h2>
     <fieldset>
         <legend>Hogy zajlik a rendelés nálunk?</legend>
         <ol>
@@ -138,10 +138,6 @@
             <label for="hall">Diák/Hallgató kedvezmény</label>
         </div>
         <div>
-            <input class="form-input" type="radio" name="kedv" id="nyug">
-            <label for="nyug">Nyugdíjas akció</label>
-        </div>
-        <div>
             <input class="form-input" type="radio" name="kedv" id="kozal">
             <label for="kozal">Közalkalmazotti kedvezmény</label>
         </div>
@@ -149,7 +145,8 @@
     <fieldset>
         <legend>Szállítás módja</legend>
         <select name="szall" id="szall" onchange="selectedDelivery(this);">
-            <option value="Norm">Normális (1 héten belül)</option>
+            <option value="Norm" selected>Szállítási mód kiválasztása</option>
+            <option value="Normal">Normális (1 héten belül)</option>
             <option value="Fast">Gyors (Akár másnap)</option>
             <option value="VFast">Nagyon Gyors (Aznapi kiszállítás)</option>
         </select>
