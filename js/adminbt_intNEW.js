@@ -1,6 +1,6 @@
-let line_Form = document.querySelectorAll('tbody tr')
+/*let line_Form = document.querySelectorAll('tbody tr')
 for (const line_TR of line_Form) {
-    line_TR.addEventListener("click", function (ev) { //Edit gomb MEGnyomásával kellene müködnie
+    line_TR.addEventListener("submit", function (ev) { //Edit gomb MEGnyomásával kellene müködnie
         ev.preventDefault();//Meg lehet így előzni az alapértelmezett lefutást
         console.log(this);
 
@@ -27,4 +27,11 @@ for (const line_TR of line_Form) {
         }
         console.log(values)
     });
+}*/
+function btn_Edit() { //Módosító gomb => Feldat: TD text gyereke helyére input mezőt tegyen a gyerek értékével (Űrlap lesz a vége), majd váltson át Mentés gombra
+    alert('Szerkeztés!')
+}
+
+function btn_Del() { //Törlő gomb =>  Feldat: Törölje a sort
+    alert('Törlés!')
 }
