@@ -28,8 +28,21 @@ for (const line_TR of line_Form) {
         console.log(values)
     });
 }*/
+let dedi_line
+//A függvényt hívó gomb meghatározásához kell => LEHET, HOGY A CELLÁKNÁL IS MEGHÍVÓDIK!!
+let active_btns=document.querySelectorAll('button')
+for(const active_btn of active_btns){
+    active_btn.addEventListener("click",function(ev) {
+        ev.preventDefault();//Meg lehet így előzni az alapértelmezett lefutást
+        console.log(this);
+        dedi_line=this.parentElement.parentElement.parentElement
+        console.log(dedi_line)
+    })
+}
+
 function btn_Edit() { //Módosító gomb => Feldat: TD text gyereke helyére input mezőt tegyen a gyerek értékével (Űrlap lesz a vége), majd váltson át Mentés gombra
     alert('Szerkeztés!')
+    console.log(dedi_line)
 }
 
 function btn_Del() { //Törlő gomb =>  Feldat: Törölje a sort
