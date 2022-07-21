@@ -42,7 +42,7 @@ for(const active_btn of active_btns){
 
 function btn_Edit() { //Módosító gomb => Feldat: TD text gyereke helyére input mezőt tegyen a gyerek értékével (Űrlap lesz a vége), majd váltson át Mentés gombra
     alert('Szerkeztés!')
-    console.log(dedi_line)
+    console.log('btn_edit: '+dedi_line)
 }
 
 function btn_Del() { //Törlő gomb =>  Feldat: Törölje a sort
