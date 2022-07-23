@@ -41,7 +41,7 @@ for (const edit_btn of edit_btns) {
         //saveButtonAdd.onclick =btn_Save() //function () { alert('teszt') }
         this.parentElement.replaceChild(saveButtonAdd, this)
         saveButtonAdd.appendChild(saveIconAdd)
-        saveButtonAdd.setAttribute(onclick)
+        saveButtonAdd.setAttribute('onclick','btn_Save()')
     })
 }
 
