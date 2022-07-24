@@ -75,3 +75,92 @@ function btn_Del() { //Törlő gomb =>  Feldat: Törölje az adott sort
     alert('Delete! Átmenetileg nem lehetséges!')
     //lehegyen biztonsági kérdés is, hogy akarja-e töröni, vagy sem
 }
+
+function sendButton() {
+    alert('SEND button')
+}
+
+//űrlapesemény
+let userForm=document.querySelector('#userForm')
+userForm.addEventListener("submit",function(ev){
+    ev.preventDefault()
+
+    let inputs=this.querySelectorAll("input")
+    let values={}
+    for (let i = 0; i < inputs.length; i++) {
+        values[inputs[i].name]=inputs[i].value 
+    }
+    console.log(values)
+})
+
+//select elem kitöltése
+//a HTML résznél kell egy select tag
+let toppings = [
+    "Nagy Péter",
+    "Kis Nyúl",
+    "Hagymás Péter"
+];
+
+let toppingSelect = document.querySelector('#topping')
+let index = 0
+while (index < toppings.length) {
+    let option = document.createElement("option")
+    option.value = toppings[index]
+    option.innerHTML = toppings[index];
+    toppingSelect.appendChild(option)
+    index++
+}
+
+//A felhasználók adatainak megadása Ennek általában külsős szerverről jön
+let users = [
+    { name: "Berger Béla", telNumb: "+36/01-123-4567", email: "bergerbela@email.com", address: "1234 Mucsaröcsöge Bobó körút 124" },
+    { name: "Nagy Árpi", telNumb: "+36/02-145-4567", email: "nagyarpi@email.com", address: "1234 Mucsaröcsöge Bobó körút 125" },
+    { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }
+]
+
+//DOM manipuláció for ciklussal
+let tableBody = document.querySelector("#userTable tbody")
+let createTD=(html,parent)=>{
+    let td = document.createElement("td")
+    td.innerHTML = html
+    parent.appendChild(td)
+}
+
+//Gombok elkészítésének refaktorálása
+let createButtonGroup=parent=>{
+    let group=document.createElement("div")
+    group.className="btn-group"
+    group.ariaLabel="Basic example"
+
+    let btnInfo=document.createElement("button")
+    btnInfo.className="btn btn-primary"
+    btnInfo.innerHTML="<i class='fa-solid fa-pen-nib'></i>EDIT"
+
+    let btnDanger=document.createElement("button")
+    btnDanger.className="btn btn-danger"
+    btnDanger.innerHTML="<i class='fa-solid fa-eraser'></i>DEL"
+
+    group.appendChild(btnInfo)
+    group.appendChild(btnDanger)
+
+    let td = document.createElement("td")
+    td.appendChild(group)
+    parent.appendChild(td)
+    group.setAttribute("role","group")
+    btnInfo.setAttribute("onclick","btn_Edit()")
+    btnDanger.setAttribute("onclick","btn_Del()")
+}
+//vége
+
+for (let k in users) {
+    let tr = document.createElement("tr")
+    let th = document.createElement("th")
+    th.innerHTML = parseInt(k) + 1
+    tr.appendChild(th)
+    tr.id=`tr${(parseInt(k)+1)}`
+    for(let value of Object.values(users[k])){
+        createTD(value,tr)
+    }
+    createButtonGroup(tr)
+    tableBody.appendChild(tr)
+}
