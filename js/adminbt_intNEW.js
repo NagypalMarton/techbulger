@@ -73,4 +73,5 @@ function btn_Save() {//Mentés sor: Adott sorban évő adatokat menti
 
 function btn_Del() { //Törlő gomb =>  Feldat: Törölje az adott sort
     alert('Delete! Átmenetileg nem lehetséges!')
+    //lehegyen biztonsági kérdés is, hogy akarja-e töröni, vagy sem
 }
