@@ -30,7 +30,7 @@
                     <div class="row mb-3">
                         <label for="inputNev" class="col-sm-2 col-form-label">Név</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputNev" placeholder="John Doe">
+                            <input type="text" name="nev" class="form-control" id="inputNev" placeholder="John Doe">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -42,19 +42,21 @@
                     <div class="row mb-3">
                         <label for="inputTel" class="col-sm-2 col-form-label">Telefonszám</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputTel" placeholder="+36/12-345-6789">
+                            <input type="text" name="telSzam" class="form-control" id="inputTel"
+                                placeholder="+36/12-345-6789">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="minta@email.com">
+                            <input type="email" name="email" class="form-control" id="inputEmail3"
+                                placeholder="minta@email.com">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="inputAddress" class="col-sm-2 col-form-label">Cím</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAddress"
+                            <input type="text" name="address" class="form-control" id="inputAddress"
                                 placeholder="1234 Mucsaröcsöge Kis Mihály utca 101">
                         </div>
                     </div>
@@ -75,8 +77,8 @@
                             <th scope="col">Módosító Gombok</th>
                         </tr>
                     </thead>
-                    <tbody class="table-group-divider align-middle">
-                        
+                    <tbody id="tbody" class="table-group-divider align-middle">
+
                     </tbody>
                 </table>
             </div>
