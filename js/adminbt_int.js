@@ -22,6 +22,7 @@ let users = [
     { name: "Nagy Árpi", telNumb: "+36/02-145-4567", email: "nagyarpi@email.com", address: "1234 Mucsaröcsöge Bobó körút 125" },
     { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }*/
 ]
+
 let fetchInit = {
     method: "GET",
     headers: new Headers(),
@@ -33,7 +34,7 @@ fetch("http://localhost:3000/users", fetchInit).then(
     data => data.json(),
     err => alert(err)//console.error(err)
 ).then(
-    userss => users=JSON.parse(userss)//users.push(userss) //console.log(userss)
+    userss => alert(userss)// console.log(userss)
 );
 
 function createTable() {
