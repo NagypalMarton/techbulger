@@ -17,11 +17,23 @@ while (index < toppings.length) {
 }
 
 //A felhasználók adatainak megadása Ennek általában külsős szerverről jön
-let users = [
+/*let users = [
     { name: "Berger Béla", telNumb: "+36/01-123-4567", email: "bergerbela@email.com", address: "1234 Mucsaröcsöge Bobó körút 124" },
     { name: "Nagy Árpi", telNumb: "+36/02-145-4567", email: "nagyarpi@email.com", address: "1234 Mucsaröcsöge Bobó körút 125" },
     { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }
-]
+]*/
+let fetchInit = {
+    method: "GET",
+    headers: new Headers(),
+    mode: "cors",
+    cache: "default"
+};
+fetch("http://localhost:3000/users", fetchInit).then(
+    data => data.json(),
+    err => alert(err)//console.error(err)
+).then(
+    users => console.log(users)//alert(users)//console.log(users)
+);
 
 function createTable() {
     //DOM manipuláció for ciklussal
