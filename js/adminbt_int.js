@@ -1,183 +1,167 @@
+//select elem kitöltése
+//a HTML résznél kell egy select tag
+let toppings = [
+    "Nagy Péter",
+    "Kis Nyúl",
+    "Hagymás Péter"
+];
+
+let toppingSelect = document.querySelector('#topping')
+let index = 0
+while (index < toppings.length) {
+    let option = document.createElement("option")
+    option.value = toppings[index]
+    option.innerHTML = toppings[index];
+    toppingSelect.appendChild(option)
+    index++
+}
+
+//A felhasználók adatainak megadása Ennek általában külsős szerverről jön
 let users = [
-    {
-        name: "Mark Otto",
-        phone: "+36/20-123-4567",
-        email: "mark.otto@thisemail.jk",
-        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 12.'
-    }, {
-        name: "Mark Toto",
-        phone: "+36/20-123-4589",
-        email: "mark.toto@thisemail.jk",
-        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 14.'
-    },
-    {
-        name: "Kiss Tibbi",
-        phone: "+36/90-965-9878",
-        email: "kiss.tibi@gags.ju",
-        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 13'
-    },
-    {
-        name: "Nagy Józska",
-        phone: "+36/90-965-9878",
-        email: "Nagy.Jozska@gags.ju",
-        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 19'
-    },
-    {
-        name: "Nől Zsófia",
-        phone: "+36/90-965-7899",
-        email: "Nol.Zsofia@gags.jh",
-        address: '9876 Mucsaröcsöge Trabéz Nadrág utca 9'
-    },
+    { name: "Berger Béla", telNumb: "+36/01-123-4567", email: "bergerbela@email.com", address: "1234 Mucsaröcsöge Bobó körút 124" },
+    { name: "Nagy Árpi", telNumb: "+36/02-145-4567", email: "nagyarpi@email.com", address: "1234 Mucsaröcsöge Bobó körút 125" },
+    { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }
 ]
 
-let tableBody = document.querySelector("#tableForm tbody");
+function createTable() {
+    //DOM manipuláció for ciklussal
+    let tableBody = document.querySelector("#userTable tbody")
 
-let createTD = (html, parent) => {
-    let td = document.createElement("td")
-    td.innerHTML = html
-    parent.appendChild(td)
-};
-
-let createButtonGroup = parent => {
-    let toolbar = document.createElement("div")
-    toolbar.className = 'btn-toolbar'
-    toolbar.setAttribute('role', 'toolbar')
-    toolbar.setAttribute('aria-label', 'Toolbar with button groups')
-
-    var group = document.createElement("div")
-    group.className = "btn-group me-2";
-    group.setAttribute('role', 'group');
-    group.setAttribute('aria-label', 'First group')
-
-    var btnEdit = document.createElement("button");
-    btnEdit.className = "btn btn-outline-warning btn-group-s";
-    btnEdit.innerHTML = "<i class='fa-solid fa-pen-nib'></i> Edit";
-    btnEdit.setAttribute("onclick", "btn_modi()")
-    btnEdit.setAttribute("type", "submit_mod")
-    btnEdit.setAttribute('role', 'group')
-
-    let btnDel = document.createElement("button");
-    btnDel.className = "btn btn-outline-danger btn-group-sm";
-    btnDel.innerHTML = '<i class="fa-solid fa-dumpster-fire"></i> Del';
-    btnEdit.setAttribute("onclick", "btn_dele()")
-    btnEdit.setAttribute("type", "submit_del")
-    btnEdit.setAttribute('role', 'group')
-
-    group.appendChild(btnEdit)
-    group.appendChild(btnDel)
-    toolbar.appendChild(group)
-
-    let td = document.createElement("td")
-    td.appendChild(toolbar)
-    parent.appendChild(td)
-};
-
-for (const k in users) {
-    let tr = document.createElement("tr")
-    tr.setAttribute("class","table_row")
-
-    /*ID hozzáadása*/
-    let th=document.createElement("th")
-    th.setAttribute("scope","row")
-    th.innerHTML=parseInt(k)+1
-    tr.appendChild(th)
-
-    for (const value of Object.values(users[k])) {
-        createTD(value, tr)
+    //Korábbi táblázat soraink a törlése, eltávolítása
+    let trs = tableBody.querySelectorAll("tr")
+    if (tableBody.childElementCount > 0) {
+        for (let i = 0; i < trs.length; i++) {
+            tableBody.removeChild(trs[i])
+        }
     }
-    createButtonGroup(tr);
-    tableBody.appendChild(tr)
-}
 
-let mytd = document.querySelectorAll("td")
-let mytr = document.querySelectorAll("tr")
-let mod_osz = 4, line = 1
-for (let i = 0; i < mytd.length; i++) {
-    mytd[i].setAttribute("class", `td_sor${line}`);
-    if (i == mod_osz) {
-        mytd[i].setAttribute("class", `mod_gomb${line}`);
-        mod_osz += 5
-        line += 1
+    let createTD = (html, parent) => {
+        let td = document.createElement("td")
+        td.innerHTML = html
+        parent.appendChild(td)
     }
-    if (i + 1 == mytd.length) {
-        line = 1
+
+    //Gombok elkészítésének refaktorálása
+    let createButtonGroup = parent => {
+        let group = document.createElement("div")
+        group.className = "btn-group"
+        group.ariaLabel = "Basic example"
+
+        let btnInfo = document.createElement("button")
+        btnInfo.className = "btn btn-primary"
+        btnInfo.innerHTML = "<i class='fa-solid fa-pen-nib'></i>EDIT"
+
+        let btnDanger = document.createElement("button")
+        btnDanger.className = "btn btn-danger"
+        btnDanger.innerHTML = "<i class='fa-solid fa-eraser'></i>DEL"
+
+        group.appendChild(btnInfo)
+        group.appendChild(btnDanger)
+
+        let td = document.createElement("td")
+        td.appendChild(group)
+        parent.appendChild(td)
+        group.setAttribute("role", "group")
+        btnInfo.setAttribute("onclick", "btn_Edit()")
+        btnDanger.setAttribute("onclick", "btn_Del()")
     }
-}
-for (let i = 0; i < mytr.length; i++) {
-    mytr[i].setAttribute("id", `C${i}`);
-}
+    //vége
 
-function choiceLine(line) {/*Aktuális sor sorszámát választja ki */
-    let sorScope = document.querySelector('th[scope="row"]').firstChild.nodeValue
-    alert(sorScope)
-    return sorScope
-}
-
-function btn_modi() {
-    let addInput = document.createElement('input');
-    line = choiceLine(line)
-    addInput.className = "form-control td_sor"
-    addInput.ariaRoleDescription = "inputGroup-sizing-lg"
-    let myNodeList = document.querySelectorAll(`.td_sor${line}`)
-    for (let i = 0; i < myNodeList.length; i++) {
-        addInput.defaultValue = myNodeList[i].firstChild.nodeValue
-        myNodeList[i].appendChild(addInput.cloneNode(true))
-    }
-    btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('class', 'btn btn-success btn-group-s')/*Vajon lehet olyat, ami csak részlegesen cseréli? */
-    btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('onclick', 'btn_mentes()')
-    btn_modi = document.querySelector('button[type="submit_mod"]').setAttribute('type', 'submit_ment')
-}
-
-function btn_dele() {
-    line = choiceLine(line)
-    const element = document.querySelector(`#C${line}`)
-    alert(line)
-    if (confirm("Biztos törölni akarod a rekordod?")) {
-        element.remove()
-        alert('A kért elem törlésre került!')
+    for (let k in users) {
+        let tr = document.createElement("tr")
+        let th = document.createElement("th")
+        th.innerHTML = parseInt(k) + 1
+        tr.appendChild(th)
+        tr.id = `tr${(parseInt(k) + 1)}`
+        for (let value of Object.values(users[k])) {
+            createTD(value, tr)
+        }
+        createButtonGroup(tr)
+        tableBody.appendChild(tr)
     }
 }
 
-function btn_mentes() {
-    alert('Mentés')
-    line = choiceLine(line)
-    let myNodeList = document.querySelectorAll(`.td_sor${line}`)
-    for (let i = 0; i < myNodeList.length; i++) {
-        myNodeList[i].removeChild(myNodeList[i].firstElementChild);
-    }
+createTable()
 
-    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('onclick', 'btn_modi()')
-    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('class', 'btn btn-outline-warning btn-group-s')
-    btn_modi = document.querySelector('button[type="submit_ment"]').setAttribute('type', 'submit_mod')
+let edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')//Módosító gomb valós
+
+function btn_Edit() { //Módosító gomb => Feldat: TD text gyereke helyére input mezőt tegyen a gyerek értékével (Űrlap lesz a vége), majd váltson át Mentés gombra
+    let aktBtn = document.querySelector("[onclick*=btn_Edit]:hover")
+    let lFtd = aktBtn.parentElement.parentElement.parentElement.querySelectorAll("td")
+
+    for (let i = 0; i < lFtd.length - 1; i++) {
+        let inputAdd = document.createElement("input")
+        inputAdd.className = "form-control"
+        inputAdd.ariaLabel = "default input example"
+        inputAdd.value = lFtd[i].firstChild.data
+        inputAdd.defaultValue = inputAdd.value
+        lFtd[i].appendChild(inputAdd)
+        lFtd[i].removeChild(lFtd[i].firstChild)
+    }
+    //EDIT gomb csere SAVE gombra
+    let saveIconAdd = document.createElement("i")
+    saveIconAdd.className = "fa-solid fa-floppy-disk"
+    let saveButtonAdd = document.createElement("button")
+    saveButtonAdd.className = "btn btn-warning"
+    saveButtonAdd.type = "button"
+    saveButtonAdd.textContent = 'Save'
+    aktBtn.parentElement.replaceChild(saveButtonAdd, aktBtn)
+    saveButtonAdd.appendChild(saveIconAdd)
+    saveButtonAdd.setAttribute('onclick', 'btn_Save()')
+    edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')
+    line_Form = document.querySelector('[class="btn btn-warning"]')
+}
+
+function btn_Save() {//Mentés sor: Adott sorban évő adatokat menti
+    let inputs = line_Form.parentElement.parentElement.parentElement.querySelectorAll("input")
+    let input_TdText = line_Form.parentElement.parentElement.parentElement.querySelectorAll("td")
+    let values = {}
+    for (let i = 0; i < inputs.length; i++) {
+        values[inputs[i].name] = inputs[i].value;
+        input_TdText[i].removeChild(inputs[i])
+        input_TdText[i].textContent = inputs[i].value
+    }
+    //SAVE gomb csere EDIT gombra
+    let EditIconAdd = document.createElement("i")
+    EditIconAdd.className = "fa-solid fa-pen-nib"
+    let saveButtonAdd = document.createElement('button')
+    saveButtonAdd.className = "btn btn-primary"
+    saveButtonAdd.type = "button"
+    saveButtonAdd.textContent = "Edit"
+    line_Form.parentElement.replaceChild(saveButtonAdd, line_Form)
+    saveButtonAdd.appendChild(EditIconAdd)
+    saveButtonAdd.setAttribute('onclick', 'btn_Edit()')
+    edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')
+    console.log(edit_btns)
+}
+
+function btn_Del() { //Törlő gomb =>  Feldat: Törölje az adott sort
+    alert('Delete! Átmenetileg nem lehetséges!')
+    //lehegyen biztonsági kérdés is, hogy akarja-e töröni, vagy sem
 }
 
 function sendButton() {
-    alert('Jelenleg még nem lehet adatot felvinni a táblázatba!')
+    alert('A funkció addEventListenet-rel van megoldva!')
 }
 
-let table_row = document.querySelector(`.td_sor${line}`)
-table_row.addEventListener("click", function (ev) {/*íGY MÁR el is küldhetnénk az adatokat */
-    ev.preventDefault();
-    alert('addEventListener')
+//űrlapesemény
+let userForm = document.querySelector('#userForm')
+userForm.addEventListener("submit", function (ev) {
+    ev.preventDefault()
 
-    let inputs = this.querySelectorAll("input");
+    let inputs = this.querySelectorAll("input")
     let values = {}
     for (let i = 0; i < inputs.length; i++) {
-        values[inputs[i].name] = inputs.value
-        console.log(inputs.value)
+        values[inputs[i].name] = inputs[i].value
+        inputs[i].value = ""
     }
-    console.log(values);
-});
 
-let buttonGrMoOv = document.querySelectorAll("div[class*='btn-group']")
-let buttonGrMoOvs = document.querySelectorAll("div[class*='btn-group']")
+    users.push({
+        name: `${values.nev}`,
+        telNumb: `${values.telSzam}`,
+        address: `${values.email}`,
+        email: `${values.address}`
+    })
 
-buttonGrMoOvs.forEach(function (buttonGrMoOv) {
-    buttonGrMoOv.addEventListener('mouseover', function hover() {
-        document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 12px black"
-    });
-
-    buttonGrMoOv.addEventListener('mouseleave', function leave() {
-        document.querySelector("div[class*='btn-group']").style.boxShadow = " 0 0 0px black"
-    });
-});
+    createTable()
+})

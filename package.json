@@ -1,0 +1,20 @@
+{
+  "name": "techbulger",
+  "version": "1.0.0",
+  "description": "Ez egy demo oldal, ahol egy informatikával foglalkozó webshop lesz elkészítve. A webshop alapját a 2022. májusában elindult Újratervezési program 3.0 hamburgerezője adta.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NagypalMarton/techbulger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NagypalMarton/techbulger/issues"
+  },
+  "homepage": "https://github.com/NagypalMarton/techbulger#readme"
+}
