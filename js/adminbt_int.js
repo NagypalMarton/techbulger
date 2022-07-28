@@ -18,6 +18,7 @@ while (index < toppings.length) {
 
 //A felhasználók adatainak megadása Ennek általában külsős szerverről jön
 let users = [
+    //ha nincs JSON szerver, akkor az alábbi kell
     /*{ name: "Berger Béla", telNumb: "+36/01-123-4567", email: "bergerbela@email.com", address: "1234 Mucsaröcsöge Bobó körút 124" },
     { name: "Nagy Árpi", telNumb: "+36/02-145-4567", email: "nagyarpi@email.com", address: "1234 Mucsaröcsöge Bobó körút 125" },
     { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }*/
@@ -34,10 +35,10 @@ fetch("http://localhost:3000/users", fetchInit).then(
     data => data.json(),
     err => alert(err)//console.error(err)
 ).then(
-    userss => alert(userss)// console.log(userss)
+    users => createTable(users)//alert(userss)// console.log(userss)
 );
 
-function createTable() {
+function createTable(users) {
     //DOM manipuláció for ciklussal
     let tableBody = document.querySelector("#userTable tbody")
 
@@ -87,14 +88,16 @@ function createTable() {
         tr.appendChild(th)
         tr.id = `tr${(parseInt(k) + 1)}`
         for (let value of Object.values(users[k])) {
-            createTD(value, tr)
+            if(typeof(1)!=typeof(value)){
+                createTD(value, tr)
+            }
         }
         createButtonGroup(tr)
         tableBody.appendChild(tr)
     }
 }
 
-createTable()
+//createTable() // HA NINCS JSON szerver
 
 let edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')//Módosító gomb valós
 
