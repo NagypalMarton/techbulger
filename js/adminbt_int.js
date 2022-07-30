@@ -24,20 +24,23 @@ let users = [
     { name: "Kiss Bence", telNumb: "+36/03-166-4567", email: "kissbence@email.com", address: "1234 Mucsaröcsöge Bobó körút 126" }*/
 ]
 
-//READ
-let fetchInit = {
-    method: "GET", //CRUD => Create(POST) Read(GET) Update(PUT) Delete(DELETE)
-    headers: new Headers(),
-    mode: "cors",
-    cache: "default"
-};
-//előtte el kell indítani a szervert
-fetch("http://localhost:3000/users", fetchInit).then(
-    data => data.json(),
-    err => alert(err)//console.error(err)
-).then(
-    users => createTable(users)//alert(userss)// console.log(userss)
-);
+getData()
+
+function getData() { //READ
+    let fetchInit = {
+        method: "GET", //CRUD => Create(POST) Read(GET) Update(PUT) Delete(DELETE)
+        headers: new Headers(),
+        mode: "cors",
+        cache: "default"
+    };
+    //előtte el kell indítani a szervert
+    fetch("http://localhost:3000/users", fetchInit).then(
+        data => data.json(),
+        err => alert(err)//console.error(err)
+    ).then(
+        users => createTable(users)//alert(userss)// console.log(userss)
+    );
+}
 
 function createTable(users) {
     //DOM manipuláció for ciklussal
@@ -106,12 +109,28 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
     let aktBtn = document.querySelector("[onclick*=btn_Edit]:hover")
     let lFtd = aktBtn.parentElement.parentElement.parentElement.querySelectorAll("td")
 
-    for (let i = 0; i < lFtd.length - 1; i++) {
+    for (let i = 0; i < lFtd.length - 1; i++) {//Adatbázis frissítő függvény elkészítése vége: 3:50
         let inputAdd = document.createElement("input")
         inputAdd.className = "form-control"
         inputAdd.ariaLabel = "default input example"
         inputAdd.value = lFtd[i].firstChild.data
         inputAdd.defaultValue = inputAdd.value
+        switch (i) {
+            case 0:
+                inputAdd.name = "name"
+                break;
+            case 1:
+                inputAdd.name = "telNumb"
+                break;
+            case 3:
+                inputAdd.name = "email"
+                break;
+            case 4:
+                inputAdd.name = "address"
+                break;
+            default:
+                break;
+        }
         lFtd[i].appendChild(inputAdd)
         lFtd[i].removeChild(lFtd[i].firstChild)
     }
@@ -130,14 +149,16 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
 }
 
 function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
-    let inputs = line_Form.parentElement.parentElement.parentElement//.querySelectorAll("input")
-    let input_TdText = line_Form.parentElement.parentElement.parentElement.querySelectorAll("td")
+    let tr = line_Form.parentElement.parentElement.parentElement//.querySelectorAll("input")
+    let data = getRowData(tr)
+    console.log(data)
+    /*let input_TdText = line_Form.parentElement.parentElement.parentElement.querySelectorAll("td")
     let values = {}
     for (let i = 0; i < inputs.length; i++) {
         values[inputs[i].name] = inputs[i].value;
         input_TdText[i].removeChild(inputs[i])
         input_TdText[i].textContent = inputs[i].value
-    }
+    }*/
     //SAVE gomb csere EDIT gombra
     let EditIconAdd = document.createElement("i")
     EditIconAdd.className = "fa-solid fa-pen-nib"
@@ -149,11 +170,10 @@ function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
     saveButtonAdd.appendChild(EditIconAdd)
     saveButtonAdd.setAttribute('onclick', 'btn_Edit(this)')
     edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')
-    console.log(edit_btns)
 }
 
 function btn_Del(btn) { //Törlő gomb =>  Feldat: Törölje az adott sort
-   // alert('Delete! Átmenetileg nem lehetséges!')
+    // alert('Delete! Átmenetileg nem lehetséges!')
     //lehegyen biztonsági kérdés is, hogy akarja-e töröni, vagy sem
     let tr = btn.parentElement.parentElement.parentElement
     let id = tr.querySelector("th:first-child").innerHTML;
@@ -166,46 +186,46 @@ function btn_Del(btn) { //Törlő gomb =>  Feldat: Törölje az adott sort
         resp => resp.json(),
         err => console.error(err)
     ).then(
-        data =>{
+        data => {
             createTable()
         }
     );
 }
 
 function sendButton(row) {
-    console.log('A funkció addEventListener-rel van megoldva!')
+    //console.log('A funkció addEventListener-rel van megoldva!')
 
-    let tr=row.parentElement.parentElement
-    getRowData(tr)
-    let fetchOptions={
+    let tr = row.parentElement.parentElement
+    let data = getRowData(tr)
+    delete data.id;
+    let fetchOptions = {
         method: "POST",
-        mode:'cors',
-        cache:"no-cache",
-        headers:{
-            'Content-Type':'application=json'
+        mode: 'cors',
+        cache: "no-cache",
+        headers: {
+            'Content-Type': 'application/json'
         },
-        body:JSON.stringify(data)
+        body: JSON.stringify(data)
     }
-    fetch(' http://localhost:3000/users', fetchOptions).then(
-        resp=>resp.json(),
-        err=> console.error(err)
+    fetch(`http://localhost:3000/users`, fetchOptions).then(
+        resp => resp.json(),
+        err => console.error(err)
     ).then(
-        data=>console.log(data)//4:03
+        data => getData()
     )
 }
 
-function getRowData(tr){
-    let inputs=tr.querySelectorAll("input.form-control")
-    let data={}
-    for(let i=0;i<inputs.length;i++){
-        data[inputs[i].name]=inputs[i].value
+function getRowData(tr) {
+    let inputs = tr.querySelectorAll("input.form-control")
+    let data = {}
+    for (let i = 0; i < inputs.length; i++) {
+        data[inputs[i].name] = inputs[i].value
     }
-    
-    console.log(data)
+    return data
 }
 
 //űrlapesemény
-let userForm = document.querySelector('#userForm')
+/*let userForm = document.querySelector('#userForm')
 userForm.addEventListener("submit", function (ev) {
     ev.preventDefault()
 
@@ -225,4 +245,4 @@ userForm.addEventListener("submit", function (ev) {
 
     createTable()
     console.log('addEventListener lefutott és hozzáadta a táblázathoz!')
-})
+})*/
