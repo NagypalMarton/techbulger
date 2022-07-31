@@ -33,12 +33,12 @@ function getData() { //READ
         mode: "cors",
         cache: "default"
     };
-    //előtte el kell indítani a szervert
+    //előtte el kell indítani a szervert, ha helyi van
     fetch("http://localhost:3000/users", fetchInit).then(
         data => data.json(),
         err => alert(err)//console.error(err)
     ).then(
-        users => createTable(users)//alert(userss)// console.log(userss)
+        users => createTable(users)
     );
 }
 
@@ -88,12 +88,15 @@ function createTable(users) {
     for (let k in users) {
         let tr = document.createElement("tr")
         let th = document.createElement("th")
-        th.innerHTML = parseInt(k) + 1
-        tr.appendChild(th)
+        /*       th.innerHTML = parseInt(k) + 1
+              tr.appendChild(th) */
         tr.id = `tr${(parseInt(k) + 1)}`
         for (let value of Object.values(users[k])) {
             if (typeof (1) != typeof (value)) {
                 createTD(value, tr)
+            } else if (typeof (1) == typeof (value)) {
+                th.innerHTML = value
+                tr.appendChild(th)
             }
         }
         createButtonGroup(tr)
@@ -109,7 +112,7 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
     let aktBtn = document.querySelector("[onclick*=btn_Edit]:hover")
     let lFtd = aktBtn.parentElement.parentElement.parentElement.querySelectorAll("td")
 
-    for (let i = 0; i < lFtd.length - 1; i++) {//Adatbázis frissítő függvény elkészítése vége: 3:50
+    for (let i = 0; i < lFtd.length - 1; i++) {
         let inputAdd = document.createElement("input")
         inputAdd.className = "form-control"
         inputAdd.ariaLabel = "default input example"
@@ -122,10 +125,10 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
             case 1:
                 inputAdd.name = "telNumb"
                 break;
-            case 3:
+            case 2:
                 inputAdd.name = "email"
                 break;
-            case 4:
+            case 3:
                 inputAdd.name = "address"
                 break;
             default:
@@ -151,7 +154,6 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
 function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
     let tr = line_Form.parentElement.parentElement.parentElement//.querySelectorAll("input")
     let data = getRowData(tr)
-    console.log(data)
     /*let input_TdText = line_Form.parentElement.parentElement.parentElement.querySelectorAll("td")
     let values = {}
     for (let i = 0; i < inputs.length; i++) {
@@ -159,6 +161,24 @@ function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
         input_TdText[i].removeChild(inputs[i])
         input_TdText[i].textContent = inputs[i].value
     }*/
+    let fetchOptions = {
+        method: "PUT",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }
+    fetch(`http://localhost:3000/users/${data.id}`, fetchOptions).then(
+        resp => resp.json(),
+        err => console.error(err)
+    ).then(
+        data => {
+            alert('Sikeres frissítés!')
+            console.log(data)
+        }
+    );
     //SAVE gomb csere EDIT gombra
     let EditIconAdd = document.createElement("i")
     EditIconAdd.className = "fa-solid fa-pen-nib"
@@ -186,9 +206,7 @@ function btn_Del(btn) { //Törlő gomb =>  Feldat: Törölje az adott sort
         resp => resp.json(),
         err => console.error(err)
     ).then(
-        data => {
-            createTable()
-        }
+        data => getData()
     );
 }
 
@@ -218,6 +236,7 @@ function sendButton(row) {
 function getRowData(tr) {
     let inputs = tr.querySelectorAll("input.form-control")
     let data = {}
+    data['id'] = tr.querySelector("th").firstChild.textContent
     for (let i = 0; i < inputs.length; i++) {
         data[inputs[i].name] = inputs[i].value
     }

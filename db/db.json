@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Berger Béla",
-      "telNumb": "+36/01-123-4567",
-      "email": "bergerbela@email.com",
-      "address": "1234 Mucsaröcsöge Bobó körút 124"
+      "id": 3,
+      "name": "Kiss Bence János",
+      "telNumb": "+36/03-166-4567",
+      "email": "kissbence@email.com",
+      "address": "1234 Mucsaröcsöge Bobó körút 126"
     }
   ],
   "comments": [
