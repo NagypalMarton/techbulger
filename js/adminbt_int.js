@@ -154,13 +154,6 @@ function btn_Edit(el) { //Módosító gomb => Feldat: TD text gyereke helyére i
 function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
     let tr = line_Form.parentElement.parentElement.parentElement//.querySelectorAll("input")
     let data = getRowData(tr)
-    /*let input_TdText = line_Form.parentElement.parentElement.parentElement.querySelectorAll("td")
-    let values = {}
-    for (let i = 0; i < inputs.length; i++) {
-        values[inputs[i].name] = inputs[i].value;
-        input_TdText[i].removeChild(inputs[i])
-        input_TdText[i].textContent = inputs[i].value
-    }*/
     let fetchOptions = {
         method: "PUT",
         mode: "cors",
@@ -172,13 +165,21 @@ function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
     }
     fetch(`http://localhost:3000/users/${data.id}`, fetchOptions).then(
         resp => resp.json(),
-        err => console.error(err)
+        err => { alert(err); console.error(err) }
     ).then(
         data => {
+            getData()
             alert('Sikeres frissítés!')
-            console.log(data)
         }
     );
+   /* let inputs = tr.querySelectorAll("td input")
+    console.log(inputs)
+    let values = {}
+    for (let i = 0; i < inputs.length; i++) {
+        values[inputs[i].name] = inputs[i].value;
+        input_TdText[i].removeChild(inputs[i])
+        input_TdText[i].textContent = inputs[i].value
+    }
     //SAVE gomb csere EDIT gombra
     let EditIconAdd = document.createElement("i")
     EditIconAdd.className = "fa-solid fa-pen-nib"
@@ -189,7 +190,7 @@ function btn_Save(el) {//Mentés sor: Adott sorban évő adatokat menti
     line_Form.parentElement.replaceChild(saveButtonAdd, line_Form)
     saveButtonAdd.appendChild(EditIconAdd)
     saveButtonAdd.setAttribute('onclick', 'btn_Edit(this)')
-    edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')
+    edit_btns = document.querySelectorAll('[onclick*=btn_Edit]')*/
 }
 
 function btn_Del(btn) { //Törlő gomb =>  Feldat: Törölje az adott sort
